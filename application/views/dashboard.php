@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .sidebar {
-            background-color: #f8f9fa;
+            background-color: #D9D9D9;
             height: 100vh;
             padding-top: 20px;
         }
