@@ -17,6 +17,10 @@
             border-radius: 50%;
             margin: 0 auto;
         }
+        
+        .profile-btn:hover {
+          background-color: #3a6a98;
+        }
         .menu-link {
             text-decoration: none;
             color: #000;
@@ -77,7 +81,8 @@
         </div>
         <!-- Main Content -->
         <div class="col-md-9">
-            <h3 class="mt-4">Dashboard Murid, Hai /nama murid dalam session ini/</h3>
+            <h3 class="mt-4">Dashboard Murid</h3>
+            <h4 class="mt-4">Jelajahi Materi</h4>
             <div class="row mt-3">
                 <?php
                 $subjects = [
