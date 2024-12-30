@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran</title>
+    <title>Ujian</title>
     <style>
     * body {
     font-family: Arial, sans-serif;
@@ -128,23 +128,23 @@ table tbody tr:hover {
             <ul class="menu">
                 <li><a href="#">Kelola murid</a></li>
                 <li><a href="#">Kelola kelas dan jadwal</a></li>
-                <li><a href="#">Kelola Matapelajaran</a></li>
+                <li><a href="#">Kelola Matapelajaran </a></li>
                 <li><a href="#">Kelola ujian</a></li>
-                <li><a href="#">Kelola nilai </a></li>
+                <li><a href="#">Kelola Nilai</a></li>
                 <li><a href="#">Change Log</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1>Kelola Murid</h1>
-            <h1><li><a href="#">Tambah murid +</a></li></h1>
+            <h1>Kelola Ujian</h1>
+            <h1><li><a href="#">Tambah Ujian</a></li></h1>
             <table>
                 <thead>
                     <tr>
-                        <th>id murid</th>
-                        <th>nama murid</th>
-                        <th>email murid</th>
-                        <th>password murid</th>
-                        <th>tanggal registrasi</th>
+                        <th>ID Ujian</th>
+                        <th>ID Mapel</th>
+                        <th>ID Pengajar</th>
+                        <th>Link Ujian</th>
+                        <th>deskripsi</th>
                         <th>Kelola</th>
                 </thead>
                 <tbody>

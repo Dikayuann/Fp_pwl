@@ -79,9 +79,9 @@
     <img src="images/logo.png" alt="Logo Bimbelindo">
         <h1>Bimbelindo </h1>
         <p>Solusi Pembelajara Jarak Jauh</p>
-        <p>Gunakan ID pembelajaran anda</p>
+        <p>Gunakan Email pembelajaran anda</p>
         <form action="<?php echo site_url('login/authenticate'); ?>" method="post">
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="Email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
