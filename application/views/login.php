@@ -78,7 +78,7 @@
     <div class="login-container">
     <img src="images/logo.png" alt="Logo Bimbelindo">
         <h1>Bimbelindo </h1>
-        <p>Solusi Pembelajara Jarak Jauh</p>
+        <p>Solusi Pembelajaran Jarak Jauh</p>
         <p>Gunakan ID pembelajaran anda</p>
         <form action="<?php echo site_url('login/authenticate'); ?>" method="post">
             <input type="text" name="username" placeholder="Username" required>
