@@ -29,8 +29,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
 

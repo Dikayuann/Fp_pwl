@@ -36,8 +36,6 @@
             background-color: #D9D9D9;
             color: #000000;
             padding: 20px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -134,10 +132,9 @@
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 20px 30px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -195,5 +192,4 @@
     </div>
     <footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
 </body>
-
 </html>

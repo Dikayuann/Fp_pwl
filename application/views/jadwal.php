@@ -22,7 +22,7 @@
         .header {
             background-color: #325279;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 20px 30px;
             text-align: left;
             font-size: 20px;
             font-weight: bold;
@@ -133,10 +133,9 @@
 
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 20px 30px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
             position: relative;
         }
     </style>

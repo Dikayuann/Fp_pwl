@@ -20,8 +20,7 @@
         .header {
             background-color: #325279;
             color: #ffffff;
-            padding: 10px 20px;
-            text-align: left;
+            padding: 20px 30px;
             font-size: 20px;
             font-weight: bold;
         }
@@ -34,9 +33,8 @@
         .sidebar {
             width: 250px;
             background-color: #D9D9D9;
-            color: #000000;
             padding: 20px;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .profile {
@@ -54,11 +52,11 @@
 
         .profile-btn {
             background-color: #325279;
-            color: #fff;
+            color: #ffffff;
             border: none;
             padding: 10px 50px;
+            border-radius: 20px;
             cursor: pointer;
-            border-radius: 30px;
             transition: background-color 0.3s;
         }
 
@@ -94,8 +92,8 @@
 
         .content h1 {
             font-size: 24px;
-            margin-bottom: 20px;
             color: #000000;
+            margin-bottom: 20px;
             text-align: center;
         }
 
@@ -111,14 +109,13 @@
         table th,
         table td {
             padding: 15px;
-            text-align: left;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
 
         table th {
             background-color: #325279;
-            color: #fff;
-            text-align: center;
+            color: #ffffff;
         }
 
         table tbody tr:nth-child(even) {
@@ -130,12 +127,10 @@
         }
 
         footer {
-            text-align: center;
-            padding: 10px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
-            position: relative;
+            text-align: center;
+            padding: 20px 30px;
         }
     </style>
 </head>

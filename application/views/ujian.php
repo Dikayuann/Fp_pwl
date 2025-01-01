@@ -6,119 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ujian</title>
     <style>
-    * body {
-    font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-    display: flex;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+        }
 
-.sidebar {
-    width: 250px;
-    background-color: #D9D9D9;
-    color: #000000;
-    min-height: 100vh;
-    padding: 20px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
+        .header {
+            background-color: #325279;
+            color: #ffffff;
+            padding: 20px 30px;
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-.profile {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-.profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .sidebar {
+            width: 250px;
+            background-color: #D9D9D9;
+            color: #000000;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
 
-.profile-btn {
-    background-color: #325279;
-    color: #fff;
-    border: none;
-    padding: 10px 50px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: background-color 0.3s;
-}
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.profile-btn:hover {
-    background-color: #3a6a98;
-}
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
 
-.menu {
-    list-style: none;
-    padding: 0;
-}
+        .profile-btn {
+            background-color: #325279;
+            color: #fff;
+            border: none;
+            padding: 10px 50px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
 
-.menu li {
-    margin-bottom: 15px;
-}
+        .profile-btn:hover {
+            background-color: #3a6a98;
+        }
 
-.menu a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 16px;
-    transition: color 0.3s;
-}
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
 
-.menu a:hover {
-    color: #d0e7ff;
-}
+        .menu li {
+            margin-bottom: 15px;
+        }
 
-.content {
-    flex: 1;
-    padding: 30px;
-}
+        .menu a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
 
-.content h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #000000;
-}
+        .menu a:hover {
+            color: #3a6a98;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        .content {
+            flex: 1;
+            padding: 30px;
+            background-color: #F8F9FA;
+        }
 
-table th,
-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000000;
+            text-align: center;
+        }
 
-table th {
-    background-color: #2b5c87;
-    color: #fff;
-    text-align: center;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #D9D9D9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+        table th,
+        table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
+        table th {
+            background-color: #325279;
+            color: #fff;
+            text-align: center;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 30px;
+            background-color: #325279;
+            color: #ffffff;
+        }
     </style>
 </head>
 
 <body>
+    <div class="header">Bimbelindo</div>
     <div class="container">
         <div class="sidebar">
             <div class="profile">
@@ -153,5 +175,7 @@ table tbody tr:hover {
             </table>
         </div>
     </div>
+    <footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
 </body>
+
 </html>
