@@ -128,7 +128,6 @@ table tbody tr:hover {
             <ul class="menu">
                 <li><a href="#">Kelola murid</a></li>
                 <li><a href="#">Kelola kelas dan jadwal</a></li>
-                <li><a href="#">Kelola Matapelajaran</a></li>
                 <li><a href="#">Kelola ujian</a></li>
                 <li><a href="#">Kelola nilai </a></li>
                 <li><a href="#">Change Log</a></li>
@@ -136,14 +135,14 @@ table tbody tr:hover {
         </div>
         <div class="content">
             <h1>Kelola Murid</h1>
-            <h1><li><a href="#">Tambah murid +</a></li></h1>
+            <h1><li><a href="#">Tambah Murid</a></li></h1>
             <table>
                 <thead>
                     <tr>
                         <th>id murid</th>
                         <th>nama murid</th>
                         <th>email murid</th>
-                        <th>password murid</th>
+                        <th>password crud_murid</th>
                         <th>tanggal registrasi</th>
                         <th>Kelola</th>
                 </thead>

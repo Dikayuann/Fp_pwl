@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kelas dan Jadwal</title>
+    <title>Edit Kelas dan Jadwal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,7 +77,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Tambah Kelas dan Jadwal</h1>
+        <h1>Edit Kelas dan Jadwal</h1>
         <form action="<?= base_url('register/submit') ?>" method="post">
             <div class="form-group">
                 <label for="id_kelas">ID Kelas</label>
