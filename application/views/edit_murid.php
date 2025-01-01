@@ -83,33 +83,38 @@
 <body>
     <div class="form-container">
         <h2>Edit Murid</h2>
-        <form action="<?php echo site_url('murid/simpan'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo site_url('crud_murid/update'); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_murid" value="<?php echo $murid->id_murid; ?>"> <!-- Menyimpan ID murid -->
+            
             <div class="form-group">
-                <label for="id_murid">ID Murid</label>
-                <input type="text" id="id_murid" name="id_murid" placeholder="Masukkan ID Murid" required>
+                <label>Nama Murid:</label>
+                <input type="text" name="nama_murid" value="<?php echo $murid->nama_murid; ?>" required>
             </div>
+            
             <div class="form-group">
-                <label for="nama_murid">Nama Murid</label>
-                <input type="text" id="nama_murid" name="nama_murid" placeholder="Masukkan Nama Murid" required>
+                <label>Email Murid:</label>
+                <input type="email" name="email_murid" value="<?php echo $murid->email_murid; ?>" required>
             </div>
+            
             <div class="form-group">
-                <label for="email_murid">Email Murid</label>
-                <input type="email" id="email_murid" name="email_murid" placeholder="Masukkan Email Murid" required>
+                <label>Password:</label>
+                <input type="password" name="password" required>
             </div>
+            
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                <label>Tanggal Registrasi:</label>
+                <input type="date" name="tanggal_registrasi" value="<?php echo $murid->tanggal_registrasi; ?>" required>
             </div>
+            
             <div class="form-group">
-                <label for="tanggal_registrasi">Tanggal Registrasi</label>
-                <input type="date" id="tanggal_registrasi" name="tanggal_registrasi" required>
+                <label>Foto Profil:</label>
+                <input type="file" name="foto_profil">
+                <small>Biarkan kosong jika tidak ingin mengubah foto.</small>
             </div>
-            <div class="form-group">
-                <label for="foto_profil">Foto Profil</label>
-                <input type="file" id="foto_profil" name="foto_profil" accept="image/*">
-            </div>
-            <button type="submit" class="btn-submit">Tambahkan</button>
+            
+            <button type=" submit" class="btn-submit">Simpan</button>
         </form>
+        <a href="<?php echo site_url('crud_murid'); ?>">Kembali</a>
     </div>
 </body>
 </html>
