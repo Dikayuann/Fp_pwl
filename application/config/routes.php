@@ -49,6 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+$config['base_url'] = 'http://localhost/Fp_pwl/index.php/';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -75,3 +78,22 @@ $route['CRUD_ujian/simpan'] = 'CRUD_ujian/simpan';
 $route['CRUD_ujian/edit/(:num)'] = 'CRUD_ujian/edit/$1';
 $route['CRUD_ujian/update'] = 'CRUD_ujian/update';
 $route['CRUD_ujian/hapus/(:num)'] = 'CRUD_ujian/hapus/$1';
+
+$route['Admin_login'] = 'Admin_login/authenticate';
+$route['Admin_login/authenticate'] = 'Admin_login/authenticate';
+$route['admin/dashboard'] = 'dashboard/index';
+
+
+//$route['login'] = 'login/authenticate';
+//$route['login/authenticate'] = 'login/authenticate';
+//$route['login/dashboard'] = 'dashboard/index';
+
+
+$route['login'] = 'login/index';
+
+// Proses autentikasi login untuk murid
+$route['login/authenticate'] = 'login/authenticate';
+// Halaman dashboard setelah login berhasil
+$route['dashboard'] = 'dashboard/index';
+// Logout
+$route['logout'] = 'login/logout';  // Mengarah ke controller 'Login' dan method 'logout' untuk logout

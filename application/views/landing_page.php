@@ -14,8 +14,11 @@
 <div class="bg-dark text-white py-3 px-4 d-flex justify-content-between align-items-center shadow-sm position-sticky top-0 left-0">
 	<h4 class="m-0">Bimbelindo</h4>
 	<div>
-		<a href="#" class="text-white text-decoration-none mx-2">Login Admin</a>
-		<a href="#" class="text-white text-decoration-none mx-2">Login Murid</a>
+		<!-- Link ke halaman login admin -->
+		<a href="<?php echo site_url('admin_login'); ?>" class="text-white text-decoration-none mx-2">Login Admin</a>
+
+		<!-- Link ke halaman login murid -->
+		<a href="<?php echo site_url('login'); ?>" class="text-white text-decoration-none mx-2">Login Murid</a>
 	</div>
 </div>
 
