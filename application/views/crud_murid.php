@@ -112,24 +112,18 @@
             text-align: center;
         }
 
-        table tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-        table tbody tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .profile-img {
-            width: 50px; /* Ukuran gambar profil */
-            height: 50px; /* Ukuran gambar profil */
-            border-radius: 50%; /* Membuat gambar menjadi bulat */
-        }
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
     </style>
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
         <div class="sidebar">
             <div class="profile">
                 <img src="<?php echo base_url('assets/images/profile.jpg'); ?>" alt="Profile Picture">
@@ -143,40 +137,23 @@
                 <li><a href="#">Change Log</a></li>
             </ul>
         </div>
-    <div class="content">
-        <h1>Kelola Murid</h1>
-        <a href="<?php echo site_url('crud_murid/tambah'); ?>">Tambah Murid</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID Murid</th>
-                    <th>Nama Murid</th>
-                    <th>Email Murid</th>
-                    <th>Tanggal Registrasi</th>
-                    <th>Password Murid</th>
-                    <th>Foto Murid</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($murid as $m): ?>
-                <tr>
-                    <td><?php echo $m->id_murid; ?></td>
-                    <td><?php echo $m->nama_murid; ?></td>
-                    <td><?php echo $m->email_murid; ?></td>
-                    <td ><?php echo $m->tanggal_registrasi; ?></td>
-                    <td><?php echo $m->password_murid; ?></td>
-                    <td>
-                        <img src="<?php echo base_url('uploads/' . $m->foto_murid); ?>" alt="Foto Murid" class="profile-img" />
-                    </td>
-                    <td>
-                        <a href="<?php echo site_url('crud_murid/edit/'.$m->id_murid); ?>">Edit</a>
-                        <a href="<?php echo site_url('crud_murid/hapus/'.$m->id_murid); ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus?');">Hapus</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <div class="content">
+            <h1>Kelola Murid</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id murid</th>
+                        <th>nama murid</th>
+                        <th>email murid</th>
+                        <th>password crud_murid</th>
+                        <th>tanggal registrasi</th>
+                        <th>Kelola</th>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi dari controller -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

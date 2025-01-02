@@ -58,3 +58,20 @@ $route['crud_murid/simpan'] = 'crud_murid/simpan';
 $route['crud_murid/edit/(:num)'] = 'crud_murid/edit/$1';
 $route['crud_murid/update'] = 'crud_murid/update';
 $route['crud_murid/hapus/(:num)'] = 'crud_murid/hapus/$1';
+
+//route matapelajaran
+$route['CRUD_matapelajaran'] = 'CRUD_matapelajaran/index';
+$route['CRUD_matapelajaran/tambah'] = 'CRUD_matapelajaran/tambah';
+$route['CRUD_matapelajaran/simpan'] = 'CRUD_matapelajaran/simpan';
+$route['CRUD_matapelajaran/edit/(:num)'] = 'CRUD_matapelajaran/edit/$1';
+$route['CRUD_matapelajaran/update'] = 'CRUD_matapelajaran/update';
+$route['CRUD_matapelajaran/hapus/(:num)'] = 'CRUD_matapelajaran/hapus/$1';
+
+
+// Routes  CRUD Ujian
+$route['CRUD_ujian'] = 'CRUD_ujian/index';
+$route['CRUD_ujian/tambah'] = 'CRUD_ujian/tambah';
+$route['CRUD_ujian/simpan'] = 'CRUD_ujian/simpan';
+$route['CRUD_ujian/edit/(:num)'] = 'CRUD_ujian/edit/$1';
+$route['CRUD_ujian/update'] = 'CRUD_ujian/update';
+$route['CRUD_ujian/hapus/(:num)'] = 'CRUD_ujian/hapus/$1';
