@@ -128,27 +128,38 @@ table tbody tr:hover {
             <ul class="menu">
                 <li><a href="#">Kelola murid</a></li>
                 <li><a href="#">Kelola kelas dan jadwal</a></li>
-                <li><a href="#">Kelola Matapelajaran </a></li>
+                <li><a href="#">Kelola Matapelajaran</a></li>
                 <li><a href="#">Kelola ujian</a></li>
-                <li><a href="#">Kelola nilai </a></li>
+                <li><a href="#">Kelola nilai</a></li>
                 <li><a href="#">Change Log</a></li>
             </ul>
         </div>
         <div class="content">
             <h1>Kelola Kelas dan Jadwal</h1>
-            <h1><li><a href="#">Tambah Kelas dan Jadwal</a></li></h1>
+            <h2><a href="<?php echo site_url('tambah_kelasdanjadwal'); ?>">Tambah Kelas dan Jadwal</a></h2>
             <table>
                 <thead>
                     <tr>
-                        <th>id kelas</th>
-                        <th>nama kelas</th>
-                        <th>id murid</th>
-                        <th>id admin</th>
-                        <th>jadwal</th>
+                        <th>ID Kelas</th>
+                        <th>Nama Kelas</th>
+                        <th>ID Admin</th>
+                        <th>Jadwal</th>
                         <th>Kelola</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <!-- Data akan diisi dari controller -->
+                    <?php foreach ($kelas as $k): ?>
+                    <tr>
+                        <td><?php echo $k->id_kelas; ?></td>
+                        <td><?php echo $k->nama_kelas; ?></td>
+                        <td><?php echo $k->id_admin; ?></td>
+                        <td><?php echo $k->jadwal; ?></td>
+                        <td>
+                            <a href="<?php echo site_url('edit_kelasdanjadwal/'.$k->id_kelas); ?>">Edit</a>
+                            <a href="<?php echo site_url('crud_kelas_jadwal/hapus/'.$k->id_kelas); ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus kelas ini?');">Hapus</a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -78,7 +78,7 @@
 <body>
     <div class="form-container">
         <h1>Tambah Kelas dan Jadwal</h1>
-        <form action="<?= base_url('register/submit') ?>" method="post">
+        <form action="<?= site_url('crud_kelas_jadwal/simpan') ?>" method="post">
             <div class="form-group">
                 <label for="id_kelas">ID Kelas</label>
                 <input type="text" id="id_kelas" name="id_kelas" placeholder="Masukkan ID Kelas" required>
@@ -100,8 +100,8 @@
             </div>
 
             <div class="form-group">
-                <label for="tanggal-lahir">Jadwal</label>
-                <input type="text" id="tanggal-lahir" name="tanggal-lahir"placeholder="Masukkan hari" required>
+                <label for="jadwal">Jadwal</label>
+                <input type="text" id="jadwal" name="jadwal" placeholder="Masukkan Jadwal" required>
             </div>
 
             <button type="submit" class="btn-submit">Tambahkan</button>

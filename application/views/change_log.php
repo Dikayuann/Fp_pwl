@@ -145,7 +145,14 @@ table tbody tr:hover {
                         <th>Change At</th>
                 </thead>
                 <tbody>
-                    <!-- Data akan diisi dari controller -->
+                <?php foreach ($logs as $log) : ?>
+                        <tr>
+                            <td><?php echo $log->id; ?></td>
+                            <td><?php echo $log->table_name; ?></td>
+                            <td><?php echo $log->change_type; ?></td>
+                            <td><?php echo $log->changed_at; ?></td>
+                            <?php endforeach; ?>
+                        </tr>
                 </tbody>
             </table>
         </div>

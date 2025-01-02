@@ -71,40 +71,36 @@
         }
 
         .btn-submit:hover {
-            background-color: #4a7db1; /* Sama dengan hover tombol Tambah Murid */
+            background-color: #4a7db1; 
         }
     </style>
 </head>
 <body>
     <div class="form-container">
         <h1>Edit Kelas dan Jadwal</h1>
-        <form action="<?= base_url('register/submit') ?>" method="post">
-            <div class="form-group">
-                <label for="id_kelas">ID Kelas</label>
-                <input type="text" id="id_kelas" name="id_kelas" placeholder="Masukkan ID Kelas" required>
-            </div>
-
+        <form action="<?= site_url('kelas/update') ?>" method="post">
+            <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas; ?>">
             <div class="form-group">
                 <label for="nama_kelas">Nama Kelas</label>
-                <input type="text" id="nama_kelas" name="nama_kelas" placeholder="Masukkan Nama Kelas" required>
+                <input type="text" id="nama_kelas" name="nama_kelas" value="<?= $kelas->nama_kelas; ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="id_murid">ID Murid</label>
-                <input type="text" id="id_murid" name="id_murid" placeholder="Masukkan ID Murid" required>
+                <input type="text" id="id_murid" name="id_murid" value="<?= $kelas->id_murid; ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="id_admin">ID Admin</label>
-                <input type="text" id="id_admin" name="id_admin" placeholder="Masukkan ID Admin" required>
+                <input type="text" id="id_admin" name="id_admin" value="<?= $kelas->id_admin; ?>" required>
             </div>
 
             <div class="form-group">
-                <label for="tanggal-lahir">Jadwal</label>
-                <input type="text" id="tanggal-lahir" name="tanggal-lahir"placeholder="Masukkan hari" required>
+                <label for="jadwal">Jadwal</label>
+                <input type="text" id="jadwal" name="jadwal" value="<?= $kelas->jadwal; ?>" required>
             </div>
 
-            <button type="submit" class="btn-submit">Tambahkan</button>
+            <button type="submit" class="btn-submit">Update</button>
         </form>
     </div>
 </body>
