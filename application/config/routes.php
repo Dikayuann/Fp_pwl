@@ -103,3 +103,11 @@ $route['login/authenticate'] = 'login/authenticate';
 $route['dashboard'] = 'dashboard/index';
 // Logout
 $route['logout'] = 'login/logout';  // Mengarah ke controller 'Login' dan method 'logout' untuk logout
+
+
+$route['CRUD_nilai'] = 'CRUD_nilai/index';  // Menampilkan daftar nilai
+$route['CRUD_nilai/tambah'] = 'CRUD_nilai/tambah';  // Menampilkan form tambah nilai
+$route['CRUD_nilai/simpan'] = 'CRUD_nilai/simpan';  // Menyimpan nilai baru
+$route['CRUD_nilai/edit/(:num)'] = 'CRUD_nilai/edit/$1';  // Menampilkan form edit nilai berdasarkan ID
+$route['CRUD_nilai/update'] = 'CRUD_nilai/update';  // Mengupdate data nilai
+$route['CRUD_nilai/hapus/(:num)'] = 'CRUD_nilai/hapus/$1';  // Menghapus nilai berdasarkan ID
