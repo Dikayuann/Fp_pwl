@@ -1,48 +1,49 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// application/controllers/Login.php
 class Login extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
 		// Memuat model login
 		$this->load->model('Login_model');
-		// Memuat library session untuk menangani sesi login
+		// Memuat library session
 		$this->load->library('session');
 	}
 
-	// Halaman login
+	// Menampilkan halaman login
 	public function index() {
-		// Jika ada flashdata error, kita tampilkan di view
+		// Cek jika ada error
 		$data['error'] = $this->session->flashdata('error');
-		$this->load->view('login', $data);  // Menampilkan halaman login dengan data error
+		$this->load->view('login', $data);  // Menampilkan halaman login
 	}
 
-	// Fungsi untuk memproses login
+	// Fungsi untuk proses autentikasi login
 	public function authenticate() {
-		// Mengambil data dari form
-		$email = $this->input->post('username');  // Menggunakan email sebagai username
-		$password = $this->input->post('password');  // Mengambil password dari form
+		$email = $this->input->post('username');
+		$password = $this->input->post('password');
 
-		// Mengecek apakah data login valid
-		$user = $this->Login_model->auth_murid($email, $password);  // Panggil metode authenticate dari model
+		// Memeriksa apakah email dan password valid
+		$user = $this->Login_model->auth_murid($email, $password);
 
-		if ($user) {
-			// Jika login berhasil, set session dan redirect
+		if ($user = true) {
+			// Jika login berhasil, simpan session dan arahkan ke dashboard
 			$this->session->set_userdata('id_murid', $user->id_murid);
 			$this->session->set_userdata('nama_murid', $user->nama_murid);
 			$this->session->set_userdata('email_murid', $user->email_murid);
-			redirect('dashboard');  // Redirect ke halaman dashboard atau halaman yang sesuai
+			redirect('dashboard');  // Arahkan ke halaman dashboard
 		} else {
 			// Jika login gagal, tampilkan pesan error
 			$this->session->set_flashdata('error', 'Email atau Password salah');
-			redirect('login');
+			redirect('login');  // Kembali ke halaman login
 		}
 	}
 
-	// Fungsi untuk logout
+	// Fungsi logout
 	public function logout() {
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect('login');  // Arahkan kembali ke halaman login setelah logout
 	}
 }
+

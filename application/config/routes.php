@@ -49,6 +49,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+$config['base_url'] = 'http://localhost/Fp_pwl/index.php/';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['crud_murid'] = 'crud_murid/index';
+$route['crud_murid/tambah'] = 'crud_murid/tambah';
+$route['crud_murid/simpan'] = 'crud_murid/simpan';
+$route['crud_murid/edit/(:num)'] = 'crud_murid/edit/$1';
+$route['crud_murid/update'] = 'crud_murid/update';
+$route['crud_murid/hapus/(:num)'] = 'crud_murid/hapus/$1';
+$route['kelas'] = 'kelas/index'; // Menampilkan daftar kelas
+$route['kelas/tambah_kelasdanjadwal'] = 'kelas/tambah'; // Menampilkan form tambah kelas
+$route['kelas/edit_kelasdanjadwal/(:num)'] = 'kelas/edit/$1'; // Menampilkan form edit kelas
+$route['kelas/hapus/(:num)'] = 'kelas/hapus/$1'; // Menghapus kelas
+$route['edit_kelasdanjadwal/(:num)'] = 'edit_kelasdanjadwal/index/$1';
+
+
+//route matapelajaran
+$route['CRUD_matapelajaran'] = 'CRUD_matapelajaran/index';
+$route['CRUD_matapelajaran/tambah'] = 'CRUD_matapelajaran/tambah';
+$route['CRUD_matapelajaran/simpan'] = 'CRUD_matapelajaran/simpan';
+$route['CRUD_matapelajaran/edit/(:num)'] = 'CRUD_matapelajaran/edit/$1';
+$route['CRUD_matapelajaran/update'] = 'CRUD_matapelajaran/update';
+$route['CRUD_matapelajaran/hapus/(:num)'] = 'CRUD_matapelajaran/hapus/$1';
+
+
+// Routes  CRUD Ujian
+$route['CRUD_ujian'] = 'CRUD_ujian/index';
+$route['CRUD_ujian/tambah'] = 'CRUD_ujian/tambah';
+$route['CRUD_ujian/simpan'] = 'CRUD_ujian/simpan';
+$route['CRUD_ujian/edit/(:num)'] = 'CRUD_ujian/edit/$1';
+$route['CRUD_ujian/update'] = 'CRUD_ujian/update';
+$route['CRUD_ujian/hapus/(:num)'] = 'CRUD_ujian/hapus/$1';
+
+$route['Admin_login'] = 'Admin_login/authenticate';
+$route['Admin_login/authenticate'] = 'Admin_login/authenticate';
+$route['admin/dashboard'] = 'dashboard/index';
+
+
+//$route['login'] = 'login/authenticate';
+//$route['login/authenticate'] = 'login/authenticate';
+//$route['login/dashboard'] = 'dashboard/index';
+
+
+$route['login'] = 'login/index';
+
+// Proses autentikasi login untuk murid
+$route['login/authenticate'] = 'login/authenticate';
+// Halaman dashboard setelah login berhasil
+$route['dashboard'] = 'dashboard/index';
+// Logout
+$route['logout'] = 'login/logout';  // Mengarah ke controller 'Login' dan method 'logout' untuk logout
+
+
+$route['CRUD_nilai'] = 'CRUD_nilai/index';  // Menampilkan daftar nilai
+$route['CRUD_nilai/tambah'] = 'CRUD_nilai/tambah';  // Menampilkan form tambah nilai
+$route['CRUD_nilai/simpan'] = 'CRUD_nilai/simpan';  // Menyimpan nilai baru
+$route['CRUD_nilai/edit/(:num)'] = 'CRUD_nilai/edit/$1';  // Menampilkan form edit nilai berdasarkan ID
+$route['CRUD_nilai/update'] = 'CRUD_nilai/update';  // Mengupdate data nilai
+$route['CRUD_nilai/hapus/(:num)'] = 'CRUD_nilai/hapus/$1';  // Menghapus nilai berdasarkan ID

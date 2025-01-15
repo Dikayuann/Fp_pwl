@@ -10,26 +10,27 @@ class Login_model extends CI_Model {
 		$this->load->database();
 	}
 
-	// Fungsi untuk autentikasi pengguna
+	// Fungsi untuk autentikasi login
 	public function auth_murid($email, $password) {
-		// Mengamankan input dengan SQL Escape
+		// Keamanan input menggunakan SQL Escape
 		$email = $this->db->escape_str($email);
-		$password = $this->db->escape_str($password);  // Langsung ambil password yang dimasukkan
+		$password = $this->db->escape_str($password);
 
-		// Query untuk mencocokkan email dan password
+		// Mengecek kecocokan email dan password di database
 		$this->db->select('id_murid, nama_murid, email_murid, password_murid');
-		$this->db->from('murid');  // Pastikan nama tabel sesuai dengan yang ada di database
+		$this->db->from('murid');
 		$this->db->where('email_murid', $email);
-		$this->db->where('password_murid', $password);  // Langsung cocokkan password
+		$this->db->where('password_murid', $password);
 		$query = $this->db->get();
 
-		// Jika ada data yang ditemukan, login berhasil
+		// Jika ditemukan, kembalikan data murid
 		if ($query->num_rows() > 0) {
 			return $query->row();  // Mengembalikan data murid
 		} else {
 			return false;  // Email atau password salah
 		}
 	}
+
 
 	public function auth_admin($username, $password)
 	{
