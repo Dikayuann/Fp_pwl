@@ -52,14 +52,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Rute untuk CRUD Murid
 $route['crud_murid'] = 'crud_murid/index';
 $route['crud_murid/tambah'] = 'crud_murid/tambah';
 $route['crud_murid/simpan'] = 'crud_murid/simpan';
 $route['crud_murid/edit/(:num)'] = 'crud_murid/edit/$1';
 $route['crud_murid/update'] = 'crud_murid/update';
 $route['crud_murid/hapus/(:num)'] = 'crud_murid/hapus/$1';
+
+// Rute untuk Kelas
 $route['kelas'] = 'kelas/index'; // Menampilkan daftar kelas
 $route['kelas/tambah_kelasdanjadwal'] = 'kelas/tambah'; // Menampilkan form tambah kelas
 $route['kelas/edit_kelasdanjadwal/(:num)'] = 'kelas/edit/$1'; // Menampilkan form edit kelas
 $route['kelas/hapus/(:num)'] = 'kelas/hapus/$1'; // Menghapus kelas
 $route['edit_kelasdanjadwal/(:num)'] = 'edit_kelasdanjadwal/index/$1';
+
+// Rute untuk CRUD Nilai
+$route['CRUD_nilai'] = 'CRUD_nilai/index';
+$route['CRUD_nilai/tambah'] = 'CRUD_nilai/tambah';
+$route['CRUD_nilai/edit/(:num)'] = 'CRUD_nilai/edit/$1';
+$route['CRUD_nilai/delete/(:num)'] = 'CRUD_nilai/hapus/$1'; // Mengubah delete menjadi hapus
+$route['CRUD_nilai/simpan'] = 'CRUD_nilai/simpan'; // Mengubah nilai/simpan menjadi CRUD_nilai/simpan
