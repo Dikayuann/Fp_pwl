@@ -96,7 +96,7 @@
 <div class="login-container">
 	<img src="images/logo.png" alt="Logo Bimbelindo">
 	<h1>Bimbelindo</h1>
-	<p>Gunakan ID admin anda</p>
+	<p>Gunakan Email admin anda</p>
 
 	<!-- Display success or error messages -->
 	<?php if ($this->session->flashdata('success')): ?>
@@ -112,7 +112,7 @@
 	<?php endif; ?>
 
 	<form action="<?php echo site_url('Admin_login/authenticate'); ?>" method="post">
-		<input type="text" name="username" placeholder="Username" required>
+		<input type="text" name="username" placeholder="Email" required>
 		<input type="password" name="password" placeholder="Password" required>
 		<button type="submit">Login</button>
 	</form>

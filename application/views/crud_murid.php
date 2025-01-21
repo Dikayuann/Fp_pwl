@@ -135,7 +135,10 @@
 			<li><a href="<?php echo site_url('change_log'); ?>">Change Log</a></li>
 		</ul>
 	</div>
+	
 	<div class="content">
+	<h4>Anda Login Sebagai <?php echo isset($admin_name) ? $admin_name : 'Admin'; ?></h4>
+    <a href="<?php echo site_url('admin_login/logout'); ?>" class="btn btn-sm btn-outline-secondary ml-2">Logout</a>
 		<h1>Kelola Murid</h1>
 		<a href="<?php echo site_url('crud_murid/tambah'); ?>" class="btn btn-primary mb-3">Tambah Murid</a>
 		<table class="table table-striped table-bordered">

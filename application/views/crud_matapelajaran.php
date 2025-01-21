@@ -135,29 +135,27 @@
 </head>
 
 <body>
-<div class="container-fluid">
-	<div class="row">
-		<!-- Sidebar -->
-		<div class="col-md-3">
-			<div class="sidebar">
-				<div class="profile">
-					<img src="<?php echo base_url('assets/images/profile.jpg'); ?>" alt="Profile Picture">
-					<button class="profile-btn">Profil</button>
-				</div>
-				<ul class="menu">
-					<li><a href="#">Kelola Murid</a></li>
-					<li><a href="#">Kelola Kelas dan Jadwal</a></li>
-					<li><a href="#">Kelola Mata Pelajaran</a></li>
-					<li><a href="#">Kelola Ujian</a></li>
-					<li><a href="#">Kelola Nilai</a></li>
-					<li><a href="#">Change Log</a></li>
-				</ul>
-			</div>
+<div class="container-fluid d-flex">
+	<div class="sidebar">
+		<div class="profile">
+			<img src="<?php echo base_url('assets/images/profile.jpg'); ?>" alt="Profile Picture">
+			<button class="profile-btn">Profil</button>
 		</div>
+		<ul class="menu list-unstyled">
+			<li><a href="<?php echo site_url('crud_murid'); ?>">Kelola Murid</a></li>
+			<li><a href="<?php echo site_url('crud_kelas_jadwal'); ?>">Kelola Kelas dan Jadwal</a></li>
+			<li><a href="<?php echo site_url('crud_matapelajaran'); ?>">Kelola Matapelajaran</a></li>
+			<li><a href="<?php echo site_url('crud_ujian'); ?>">Kelola Ujian</a></li>
+			<li><a href="<?php echo site_url('crud_nilai'); ?>">Kelola Nilai</a></li>
+			<li><a href="<?php echo site_url('change_log'); ?>">Change Log</a></li>
+		</ul>
+	</div>
 
 		<!-- Main Content -->
 		<div class="col-md-9">
 			<div class="content">
+			<h4>Anda Login Sebagai <?php echo isset($admin_name) ? $admin_name : 'Admin'; ?></h4>
+			<a href="<?php echo site_url('admin_login/logout'); ?>" class="btn btn-sm btn-outline-secondary ml-2">Logout</a>
 				<h1>Kelola Mata Pelajaran</h1>
 				<a href="<?php echo site_url('crud_matapelajaran/tambah'); ?>" class="btn btn-primary mb-3">Tambah Mata Pelajaran</a>
 				<table class="table table-striped">

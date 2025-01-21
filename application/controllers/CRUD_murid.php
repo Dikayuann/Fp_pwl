@@ -11,9 +11,9 @@ class Crud_murid extends CI_Controller {
 
     public function index() {
         $data['murid'] = $this->Murid_model->get_all_murid(); // Mengambil semua data murid
+        $data['admin_name'] = $this->session->userdata('admin_name');
         $this->load->view('crud_murid', $data); // Menampilkan view
     }
-
     public function tambah() {
         $this->load->view('tambah_murid'); // Menampilkan form tambah murid
     }

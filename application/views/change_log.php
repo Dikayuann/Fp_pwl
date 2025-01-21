@@ -135,6 +135,8 @@ table tbody tr:hover {
             </ul>
         </div>
         <div class="content">
+        <h4>Anda Login Sebagai <?php echo isset($admin_name) ? $admin_name : 'Admin'; ?></h4>
+        <a href="<?php echo site_url('admin_login/logout'); ?>" class="btn btn-sm btn-outline-secondary ml-2">Logout</a>
             <h1>Change Log</h1>
             <table>
                 <thead>
