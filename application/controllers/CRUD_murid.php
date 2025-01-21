@@ -87,10 +87,10 @@ class Crud_murid extends CI_Controller {
 	public function hapus($id) {
 		// Hapus semua pendaftaran kelas yang terkait dengan murid
 		$this->db->delete('pendaftarankelas', array('id_murid' => $id));
-		
+
 		// Hapus murid
 		$this->Murid_model->delete_murid($id);
-		
+
 		redirect('crud_murid'); // Kembali ke halaman utama
 	}
 }

@@ -1,50 +1,39 @@
 <?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Nilai_model extends CI_Model {
 
-    // Nama tabel
-    private $table = 'nilai';
+	public function __construct() {
+		parent::__construct();
+	}
 
-    // Constructor
-    public function __construct() {
-        parent::__construct();
-    }
+	// Fungsi untuk mengambil semua data nilai
+	public function get_all_nilai() {
+		// Mengambil semua data dari tabel 'nilai' dan mengembalikannya dalam bentuk array
+		return $this->db->get('nilai')->result();
+	}
 
-    // Mendapatkan semua data nilai
-    public function get_all_nilai() {
-        $query = $this->db->get($this->table);
-        return $query->result();
-    }
+	// Fungsi untuk mengambil data nilai berdasarkan ID
+	public function get_nilai_by_id($id) {
+		// Mengambil data dari tabel 'nilai' berdasarkan ID nilai yang diberikan
+		return $this->db->get_where('nilai', ['id_nilai' => $id])->row();
+	}
 
-    // Mendapatkan data nilai berdasarkan ID
-    public function get_nilai_by_id($id_nilai) {
-        $query = $this->db->get_where($this->table, array('id_nilai' => $id_nilai));
-        return $query->row();
-    }
+	// Fungsi untuk menambahkan data nilai
+	public function add_nilai($data) {
+		// Menambahkan data baru ke tabel 'nilai'
+		return $this->db->insert('nilai', $data);
+	}
 
-    // Menambahkan data nilai baru
-    public function insert_nilai($data) {
-        return $this->db->insert($this->table, $data);
-    }
+	// Fungsi untuk memperbarui data nilai
+	public function update_nilai($id, $data) {
+		// Memperbarui data nilai berdasarkan ID nilai
+		return $this->db->update('nilai', $data, ['id_nilai' => $id]);
+	}
 
-    // Memperbarui data nilai
-    public function update_nilai($id_nilai, $data) {
-        $this->db->where('id_nilai', $id_nilai);
-        return $this->db->update($this->table, $data);
-    }
-
-    // Menghapus data nilai
-    public function delete_nilai($id_nilai) {
-        $this->db->where('id_nilai', $id_nilai);
-        return $this->db->delete($this->table);
-    }
-
-    // Mendapatkan nilai berdasarkan murid
-    public function get_nilai_by_murid($id_murid) {
-        $this->db->where('id_murid', $id_murid);
-        $query = $this->db->get($this->table);
-        return $query->result();
-    }
+	// Fungsi untuk menghapus data nilai
+	public function delete_nilai($id) {
+		// Menghapus data nilai berdasarkan ID
+		return $this->db->delete('nilai', ['id_nilai' => $id]);
+	}
 }
+?>
+

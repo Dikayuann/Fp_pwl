@@ -1,99 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Matapelajaran</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #e8f0fa;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Matapelajaran</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
+			background-color: #f8f9fa;
+			padding-top: 50px;
+		}
 
-        .form-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
+		.form-container {
+			background-color: white;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			max-width: 500px;
+			margin: 0 auto;
+		}
 
-        .form-container h2 {
-            color: #2b5c87;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
+		.form-container h2 {
+			color: #2b5c87;
+			font-size: 24px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
 
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
+		.form-group input:focus {
+			border-color: #4a7db1;
+		}
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            background-color: #f3f7fb;
-        }
+		.btn-submit {
+			background-color: #2b5c87;
+			color: white;
+		}
 
-        .form-group input:focus {
-            outline: none;
-            border: 2px solid #4a7db1;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 10px;
-            background-color: #2b5c87;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .btn-submit:hover {
-            background-color: #4a7db1;
-        }
-    </style>
+		.btn-submit:hover {
+			background-color: #4a7db1;
+		}
+	</style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Edit Matapelajaran</h2>
-        <form action="<?php echo site_url('matapelajaran/simpan'); ?>" method="post">
-            <div class="form-group">
-                <label for="id_mapel">ID Mapel</label>
-                <input type="text" id="id_mapel" name="id_mapel" placeholder="Masukkan ID Mapel" required>
-            </div>
-            <div class="form-group">
-                <label for="nama_mapel">Nama Mapel</label>
-                <input type="text" id="nama_mapel" name="nama_mapel" placeholder="Masukkan Nama Mapel" required>
-            </div>
-            <div class="form-group">
-                <label for="id_kelas">ID Kelas</label>
-                <input type="text" id="id_kelas" name="id_kelas" placeholder="Masukkan ID Kelas" required>
-            </div>
-            <div class="form-group">
-                <label for="id_pengajaran">ID Pengajaran</label>
-                <input type="text" id="id_pengajaran" name="id_pengajaran" placeholder="Masukkan ID Pengajaran" required>
-            </div>
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <input type="text" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi" required>
-            </div>
-            <button type="submit" class="btn-submit">Tambahkan</button>
-        </form>
-    </div>
+
+<div class="container">
+	<div class="form-container">
+		<h2>Edit Mata Pelajaran</h2>
+		<form action="<?php echo site_url('crud_matapelajaran/update'); ?>" method="post">
+			<input type="hidden" name="id_mapel" value="<?php echo $mapel->id_mapel; ?>">
+
+			<div class="form-group">
+				<label for="nama_mapel">Nama Mapel</label>
+				<input type="text" id="nama_mapel" name="nama_mapel" class="form-control" value="<?php echo $mapel->nama_mapel; ?>" required>
+			</div>
+
+			<div class="form-group">
+				<label for="id_kelas">ID Kelas</label>
+				<input type="text" id="id_kelas" name="id_kelas" class="form-control" value="<?php echo $mapel->id_kelas; ?>" >
+			</div>
+
+			<div class="form-group">
+				<label for="id_pengajaran">ID Pengajaran</label>
+				<input type="text" id="id_pengajaran" name="id_pengajaran" class="form-control" value="<?php echo $mapel->id_pengajaran; ?>" >
+			</div>
+
+			<div class="form-group">
+				<label for="deskripsi">Deskripsi</label>
+				<textarea id="deskripsi" name="deskripsi" class="form-control" rows="4" required><?php echo $mapel->deskripsi; ?></textarea>
+			</div>
+
+			<button type="submit" class="btn btn-submit btn-block">Simpan Perubahan</button>
+		</form>
+	</div>
+</div>
+
+<!-- Bootstrap JS, Popper.js, jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

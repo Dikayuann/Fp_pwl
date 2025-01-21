@@ -80,7 +80,7 @@
         <h1>Bimbelindo </h1>
         <p>Solusi Pembelajara Jarak Jauh</p>
         <p>Gunakan ID pembelajaran anda</p>
-        <form action="<?php echo site_url('login/authenticate'); ?>" method="post">
+        <form action="<?php echo site_url('Login/authenticate'); ?>" method="post">
             <input type="text" name="Email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>

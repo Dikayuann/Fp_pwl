@@ -77,7 +77,7 @@
 <body>
     <div class="form-container">
         <h2>Tambah Nilai</h2>
-        <form action="<?php echo site_url('crud_nilai/simpan'); ?>" method="post">
+        <form action="<?php echo site_url('crud_nilai/tambah'); ?>" method="post">
             <div class="form-group">
                 <label for="id_nilai">ID Nilai</label>
                 <input type="text" id="id_nilai" name="id_nilai" placeholder="Masukkan ID Nilai" required>
