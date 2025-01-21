@@ -126,12 +126,12 @@ table tbody tr:hover {
                 <button class="profile-btn">Profil</button>
             </div>
             <ul class="menu">
-                <li><a href="#">Kelola murid</a></li>
-                <li><a href="#">Kelola kelas dan jadwal</a></li>
-                <li><a href="#">Kelola Matapelajaran</a></li>
-                <li><a href="#">Kelola ujian</a></li>
-                <li><a href="#">Kelola nilai</a></li>
-                <li><a href="#">Change Log</a></li>
+            <li><a href="<?php echo site_url('crud_murid'); ?>">Kelola Murid</a></li>
+			<li><a href="<?php echo site_url('crud_kelas_jadwal'); ?>">Kelola Kelas dan Jadwal</a></li>
+			<li><a href="<?php echo site_url('crud_matapelajaran'); ?>">Kelola Matapelajaran</a></li>
+			<li><a href="<?php echo site_url('crud_ujian'); ?>">Kelola Ujian</a></li>
+			<li><a href="<?php echo site_url('crud_nilai'); ?>">Kelola Nilai</a></li>
+			<li><a href="<?php echo site_url('change_log'); ?>">Change Log</a></li>
             </ul>
         </div>
         <div class="content">

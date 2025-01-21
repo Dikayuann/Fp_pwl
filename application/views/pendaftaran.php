@@ -20,9 +20,9 @@
         .header {
             background-color: #325279;
             color: #ffffff;
-            padding: 20px 30px;
+            padding: 20px;
             text-align: left;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
 
@@ -35,15 +35,14 @@
             width: 250px;
             background-color: #D9D9D9;
             color: #000000;
-            padding: 20px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            height: 100vh;
         }
 
         .profile {
             text-align: center;
             margin-bottom: 20px;
+            padding: 20px;
         }
 
         .profile img {
@@ -79,14 +78,17 @@
         }
 
         .menu a {
+            display: block;
             text-decoration: none;
             color: #000000;
             font-size: 16px;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            transition: color 0.3s, background-color 0.3s;
         }
 
         .menu a:hover {
-            color: #3a6a98;
+            color: #ffffff;
+            background-color: #3a6a98;
         }
 
         .content {
@@ -132,12 +134,26 @@
             background-color: #f1f1f1;
         }
 
+        .btn-daftar {
+            padding: 5px 15px;
+            background-color: #325279;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-daftar:hover {
+            background-color: #3a6a98;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
+            position: relative;
         }
     </style>
 </head>
@@ -151,12 +167,12 @@
                 <button class="profile-btn">Profil</button>
             </div>
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Jadwal Pelajaran</a></li>
-                <li><a href="#">Pendaftaran Matapelajaran</a></li>
-                <li><a href="#">Ujian</a></li>
-                <li><a href="#">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="#">Pembayaran</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="jadwal">Jadwal Pelajaran</a></li>
+                <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+                <li><a href="ujian">Ujian</a></li>
+                <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
+                <li><a href="pembayaran">Pembayaran</a></li>
             </ul>
         </div>
         <div class="content">
@@ -173,13 +189,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Contoh Database-->
                     <tr>
                         <td>1</td>
                         <td>Senin</td>
                         <td>Matematika</td>
                         <td>11</td>
                         <td>Agus</td>
-                        <td><button style="padding: 5px 15px; background-color: #325279; color: white; border: none; border-radius: 5px; cursor: pointer;">Daftar</button></td>
+                        <td><button class="btn-daftar">Daftar</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -187,7 +204,7 @@
                         <td>Geografi</td>
                         <td>11</td>
                         <td>Fasiyanto</td>
-                        <td><button style="padding: 5px 15px; background-color: #325279; color: white; border: none; border-radius: 5px; cursor: pointer;">Daftar</button></td>
+                        <td><button class="btn-daftar">Daftar</button></td>
                     </tr>
                 </tbody>
             </table>

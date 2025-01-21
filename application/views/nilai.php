@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilai Hasil Pembelajaran</title>
+    <title>Pendaftaran Matapelajaran</title>
     <style>
         * {
             margin: 0;
@@ -20,9 +20,9 @@
         .header {
             background-color: #325279;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: left;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
 
@@ -35,13 +35,14 @@
             width: 250px;
             background-color: #D9D9D9;
             color: #000000;
-            padding: 20px;
+            padding: 0px;
             height: 100vh;
         }
 
         .profile {
             text-align: center;
             margin-bottom: 20px;
+            padding: 20px;
         }
 
         .profile img {
@@ -50,6 +51,7 @@
             border-radius: 50%;
             margin-bottom: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         .profile-btn {
@@ -76,14 +78,17 @@
         }
 
         .menu a {
+            display: block;
             text-decoration: none;
             color: #000000;
             font-size: 16px;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            transition: color 0.3s, background-color 0.3s;
         }
 
         .menu a:hover {
-            color: #3a6a98;
+            color: #ffffff;
+            background-color: #3a6a98;
         }
 
         .content {
@@ -129,12 +134,25 @@
             background-color: #f1f1f1;
         }
 
+        .btn-daftar {
+            padding: 5px 15px;
+            background-color: #325279;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-daftar:hover {
+            background-color: #3a6a98;
+        }
+
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
             position: relative;
         }
     </style>
@@ -145,16 +163,16 @@
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="assets/images/profile.jpg" alt="Profile Picture">
+                <img src="<?php echo base_url('assets/images/profile.jpg'); ?>" alt="Profile Picture">
                 <button class="profile-btn">Profil</button>
             </div>
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Jadwal Pelajaran</a></li>
-                <li><a href="#">Pendaftaran Matapelajaran</a></li>
-                <li><a href="#">Ujian</a></li>
-                <li><a href="#">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="#">Pembayaran</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="jadwal">Jadwal Pelajaran</a></li>
+                <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+                <li><a href="ujian">Ujian</a></li>
+                <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
+                <li><a href="pembayaran">Pembayaran</a></li>
             </ul>
         </div>
         <div class="content">
@@ -163,6 +181,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Hari</th>
                         <th>Mata Pelajaran</th>
                         <th>Kelas</th>
                         <th>Guru/Pengajar</th>
@@ -170,20 +189,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Matematika</td>
-                        <td>11</td>
-                        <td>Agus</td>
-                        <td>90</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Geografi</td>
-                        <td>11</td>
-                        <td>Fasiyanto</td>
-                        <td>85</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>

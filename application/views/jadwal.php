@@ -15,16 +15,14 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
         }
 
         .header {
             background-color: #325279;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: left;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
 
@@ -37,13 +35,14 @@
             width: 250px;
             background-color: #D9D9D9;
             color: #000000;
-            padding: 20px;
             height: 100vh;
+            padding: 0;
         }
 
         .profile {
             text-align: center;
             margin-bottom: 20px;
+            padding: 20px;
         }
 
         .profile img {
@@ -78,14 +77,17 @@
         }
 
         .menu a {
+            display: block;
             text-decoration: none;
             color: #000000;
             font-size: 16px;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            transition: color 0.3s, background-color 0.3s;
         }
 
         .menu a:hover {
-            color: #3a6a98;
+            color: #ffffff;
+            background-color: #3a6a98;
         }
 
         .content {
@@ -133,10 +135,9 @@
 
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             background-color: #325279;
             color: #ffffff;
-            margin-top: 20px;
             position: relative;
         }
     </style>
@@ -151,12 +152,12 @@
                 <button class="profile-btn">Profil</button>
             </div>
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Jadwal Pelajaran</a></li>
-                <li><a href="#">Pendaftaran Matapelajaran</a></li>
-                <li><a href="#">Ujian</a></li>
-                <li><a href="#">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="#">Pembayaran</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="jadwal">Jadwal Pelajaran</a></li>
+                <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+                <li><a href="ujian">Ujian</a></li>
+                <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
+                <li><a href="pembayaran">Pembayaran</a></li>
             </ul>
         </div>
         <div class="content">
@@ -172,6 +173,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Contoh Database -->
                     <tr>
                         <td>1</td>
                         <td>Senin</td>

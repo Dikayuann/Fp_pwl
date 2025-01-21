@@ -22,9 +22,9 @@
 		.header {
 			background-color: #325279;
 			color: #ffffff;
-			padding: 10px 20px;
+			padding: 20px;
 			text-align: left;
-			font-size: 20px;
+			font-size: 22px;
 			font-weight: bold;
 		}
 
@@ -37,13 +37,14 @@
 			width: 250px;
 			background-color: #D9D9D9;
 			color: #000000;
-			padding: 20px;
 			height: 100vh;
+			padding: 0;
 		}
 
 		.profile {
 			text-align: center;
 			margin-bottom: 20px;
+			padding: 20px;
 		}
 
 		.profile img {
@@ -71,6 +72,7 @@
 		.menu {
 			list-style: none;
 			padding: 0;
+			margin: 0;
 		}
 
 		.menu li {
@@ -78,14 +80,17 @@
 		}
 
 		.menu a {
+			display: block;
 			text-decoration: none;
 			color: #000000;
 			font-size: 16px;
-			transition: color 0.3s;
+			padding: 10px 20px;
+			transition: color 0.3s, background-color 0.3s;
 		}
 
 		.menu a:hover {
-			color: #3a6a98;
+			color: #ffffff;
+			background-color: #3a6a98;
 		}
 
 		.content {
@@ -131,7 +136,7 @@
 		.card a {
 			text-decoration: none;
 			color: #ffffff;
-			background-color: #325279;
+			background-color: #3a6a98;
 			padding: 10px 20px;
 			border-radius: 5px;
 			transition: background-color 0.3s;
@@ -143,45 +148,44 @@
 
 		footer {
 			text-align: center;
-			padding: 10px;
+			padding: 20px; 
 			background-color: #325279;
 			color: #ffffff;
-			margin-top: 20px;
 			position: relative;
 		}
 	</style>
 </head>
 
 <body>
-<div class="header">Bimbelindo</div>
-<div class="container">
-	<div class="sidebar">
-		<div class="profile">
-			<img src="assets/images/profile.jpg" alt="Profile Picture">
-			<button class="profile-btn">Profil</button>
+	<div class="header">Bimbelindo</div>
+	<div class="container">
+		<div class="sidebar">
+			<div class="profile">
+				<img src="assets/images/profile.jpg" alt="Profile Picture">
+				<button class="profile-btn">Profil</button>
+			</div>
+			<ul class="menu">
+				<li><a href="dashboard">Dashboard</a></li>
+				<li><a href="jadwal">Jadwal Pelajaran</a></li>
+				<li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+				<li><a href="ujian">Ujian</a></li>
+				<li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
+				<li><a href="pembayaran">Pembayaran</a></li>
+			</ul>
 		</div>
-		<ul class="menu">
-			<li><a href="#">Dashboard</a></li>
-			<li><a href="#">Jadwal Pelajaran</a></li>
-			<li><a href="#">Pendaftaran Matapelajaran</a></li>
-			<li><a href="#">Ujian</a></li>
-			<li><a href="#">Nilai Hasil Pembelajaran</a></li>
-			<li><a href="#">Pembayaran</a></li>
-		</ul>
-	</div>
-	<div class="content">
-		<h1>Dashboard Murid</h1>
-		<div class="card-container">
-			<?php foreach ($matapelajaran as $mapel): ?>
-				<div class="card">
-					<h3><?php echo $mapel->nama_mapel; ?></h3>
-					<a href="#">Jelajahi</a>
-				</div>
-			<?php endforeach; ?>
+		<div class="content">
+			<h1>Dashboard Murid</h1>
+			<div class="card-container">
+				<?php foreach ($matapelajaran as $mapel): ?>
+					<div class="card">
+						<h3><?php echo $mapel->nama_mapel; ?></h3>
+						<a href="#">Jelajahi</a>
+					</div>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
-</div>
-<footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
+	<footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
 </body>
 
 </html>
