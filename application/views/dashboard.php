@@ -17,7 +17,6 @@
             border-radius: 50%;
             margin: 0 auto;
         }
-        
         .profile-btn:hover {
           background-color: #3a6a98;
         }
