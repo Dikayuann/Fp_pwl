@@ -15,8 +15,6 @@
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #FFFFFF;
-			margin: 0;
-			padding: 0;
 		}
 
 		.header {
@@ -128,27 +126,38 @@
 		}
 
 		.card h3 {
-			font-size: 20px;
-			margin-bottom: 10px;
+			font-size: 18px;
+			margin-bottom: 5px;
 			color: #325279;
 		}
 
-		.card a {
-			text-decoration: none;
-			color: #ffffff;
-			background-color: #3a6a98;
-			padding: 10px 20px;
-			border-radius: 5px;
-			transition: background-color 0.3s;
+		.card p {
+			font-size: 14px;
+			color: #555555;
+			margin: 10px 0;
 		}
 
-		.card a:hover {
+		.card a.explore-btn {
+			display: inline-block;
+			text-decoration: none;
+			color: #ffffff;
+			background-color: #325279;
+			padding: 10px 25px;
+			border-radius: 30px;
+			font-size: 14px;
+			font-weight: bold;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.card a.explore-btn:hover {
 			background-color: #3a6a98;
+			transform: scale(1.05);
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 		}
 
 		footer {
 			text-align: center;
-			padding: 20px; 
+			padding: 20px;
 			background-color: #325279;
 			color: #ffffff;
 			position: relative;
@@ -161,8 +170,8 @@
 	<div class="container">
 		<div class="sidebar">
 			<div class="profile">
-				<img src="assets/images/profile.jpg" alt="Profile Picture">
-				<button class="profile-btn">Profil</button>
+				<img src="/Fp_pwl/uploads/janu.jpg" alt="Profile Picture">
+				<button class="profile-btn" onclick="window.location.href='<?php echo site_url('login/logout'); ?>';">Logout</button>
 			</div>
 			<ul class="menu">
 				<li><a href="dashboard">Dashboard</a></li>
@@ -179,7 +188,8 @@
 				<?php foreach ($matapelajaran as $mapel): ?>
 					<div class="card">
 						<h3><?php echo $mapel->nama_mapel; ?></h3>
-						<a href="#">Jelajahi</a>
+						<p><?php echo $mapel->deskripsi; ?></p>
+						<a href="#" class="explore-btn">Jelajahi</a>
 					</div>
 				<?php endforeach; ?>
 			</div>

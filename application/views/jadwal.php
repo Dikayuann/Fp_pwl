@@ -148,8 +148,8 @@
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="assets/images/profile.jpg" alt="Profile Picture">
-                <button class="profile-btn">Profil</button>
+                <img src="/Fp_pwl/uploads/janu.jpg" alt="Profile Picture">
+                <button class="profile-btn" onclick="window.location.href='<?php echo site_url('login/logout'); ?>';">Logout</button>
             </div>
             <ul class="menu">
                 <li><a href="dashboard">Dashboard</a></li>

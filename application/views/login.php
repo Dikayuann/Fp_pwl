@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Bimbelindo</title>
     <style>
+        /* Gaya umum untuk body */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,73 +14,99 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('background.jpg') no-repeat center center;
+            background: url('/Fp_pwl/uploads/background.png') no-repeat center center fixed;
             background-size: cover;
         }
 
+        /* Gaya untuk kotak login */
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.8); /* Transparansi pada latar belakang */
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Menambah shadow untuk efek 3D */
             width: 100%;
             max-width: 400px;
             text-align: center;
+            backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
         }
 
+        /* Logo */
         .login-container img {
-            width: 80px;
-            margin-bottom: 10px;
-            
+            width: 150px;
+            margin-bottom: 20px;
         }
 
+        /* Judul halaman */
         .login-container h1 {
-            font-size: 24px;
-            margin: 30px 0;
+            font-size: 28px;
+            margin: 10px 0;
             color: #2b5c87;
-            margin-bottom: 90px;
         }
 
+        /* Deskripsi */
         .login-container p {
-            margin: 0 0 60px;
+            font-size: 16px;
+            margin: 0 0 30px;
             color: #666;
-            margin-bottom: 30px;
         }
 
+        /* Gaya untuk input */
         .login-container input {
-            width: 95%;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
-            
+            box-sizing: border-box;
+            transition: border 0.3s ease;
         }
 
+        .login-container input:focus {
+            border-color: #4a7db1; /* Warna border saat input difokuskan */
+        }
+
+        /* Tombol login */
         .login-container button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #2b5c87;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
-            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
         }
 
         .login-container button:hover {
-            background-color: #4a7db1;
+            background-color: #4a7db1; /* Warna tombol saat hover */
         }
 
+        /* Responsif untuk ukuran layar kecil */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px;
+                max-width: 90%;
+            }
+
+            .login-container h1 {
+                font-size: 24px;
+            }
+
+            .login-container input,
+            .login-container button {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
-    <img src="images/logo.png" alt="Logo Bimbelindo">
-        <h1>Bimbelindo </h1>
-        <p>Solusi Pembelajara Jarak Jauh</p>
-        <p>Gunakan ID pembelajaran anda</p>
+        <img src="/Fp_pwl/uploads/bimbelindo.png" alt="Logo Bimbelindo">
+        <h1>Bimbelindo</h1>
+        <p>Solusi Pembelajaran Jarak Jauh</p>
+        <p>Gunakan ID pembelajaran Anda</p>
         <form action="<?php echo site_url('Login/authenticate'); ?>" method="post">
             <input type="text" name="Email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
