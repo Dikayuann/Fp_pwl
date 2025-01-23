@@ -28,7 +28,8 @@
 			font-weight: bold;
 			color: #2b5c87;
 		}
-		.form-group input:focus {
+		.form-group input:focus,
+		.form-group select:focus {
 			border-color: #4a7db1;
 			box-shadow: 0 0 5px rgba(74, 125, 177, 0.5);
 		}
@@ -64,12 +65,26 @@
 
 			<div class="form-group">
 				<label for="id_kelas">ID Kelas</label>
-				<input type="text" id="id_kelas" name="id_kelas" class="form-control" placeholder="Masukkan ID Kelas" value="<?php echo $mapel->id_kelas; ?>" required>
+				<select id="id_kelas" name="id_kelas" class="form-control" required>
+					<option value="">Pilih Kelas</option>
+					<?php foreach ($kelas_list as $kelas): ?>
+						<option value="<?php echo $kelas->id_kelas; ?>" <?php echo ($mapel->id_kelas == $kelas->id_kelas) ? 'selected' : ''; ?>>
+							<?php echo $kelas->nama_kelas; ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
 			</div>
 
 			<div class="form-group">
 				<label for="id_pengajaran">ID Pengajaran</label>
-				<input type="text" id="id_pengajaran" name="id_pengajaran" class="form-control" placeholder="Masukkan ID Pengajaran" value="<?php echo $mapel->id_pengajaran; ?>" required>
+				<select id="id_pengajaran" name="id_pengajaran" class="form-control" required>
+					<option value="">Pilih Pengajaran</option>
+					<?php foreach ($pengajaran_list as $pengajaran): ?>
+						<option value="<?php echo $pengajaran->id_pengajaran; ?>" <?php echo ($mapel->id_pengajaran == $pengajaran->id_pengajaran) ? 'selected' : ''; ?>>
+							<?php echo $pengajaran->nama_pengajaran; ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
 			</div>
 
 			<div class="form-group">
