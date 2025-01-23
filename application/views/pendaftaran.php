@@ -54,6 +54,10 @@
             object-fit: cover;
         }
 
+        .profile p {
+			margin-bottom: 30px;
+		}
+
         .profile-btn {
             background-color: #325279;
             color: #fff;
@@ -208,7 +212,7 @@
             </table>
         </div>
     </div>
-    <footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
+    <footer>&copy; 2025 Bimbelindo. All rights reserved.</footer>
 </body>
 
 </html>

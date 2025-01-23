@@ -51,6 +51,11 @@
 			border-radius: 50%;
 			margin-bottom: 10px;
 			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			object-fit: cover;
+		}
+
+		.profile p {
+			margin-bottom: 30px;
 		}
 
 		.profile-btn {
@@ -148,6 +153,7 @@
 			font-size: 14px;
 			font-weight: bold;
 			transition: all 0.3s ease-in-out;
+			margin-top: 15px;
 		}
 
 		.card a.explore-btn:hover {
@@ -197,7 +203,7 @@
             </div>
         </div>
 	</div>
-	<footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
+	<footer>&copy; 2025 Bimbelindo. All rights reserved.</footer>
 </body>
 
 </html>
