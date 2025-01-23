@@ -103,7 +103,7 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="/Fp_pwl/uploads/" alt="Logo Bimbelindo">
+        <img src="/Fp_pwl/uploads/bimbelindo.png" alt="Logo Bimbelindo">
         <h1>Bimbelindo</h1>
         <p>Solusi Pembelajaran Jarak Jauh</p>
         <p>Gunakan ID pembelajaran Anda</p>
