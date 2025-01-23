@@ -79,10 +79,6 @@
     <div class="form-container">
         <h1>Tambah Kelas dan Jadwal</h1>
         <form action="<?= site_url('crud_kelas_jadwal/simpan') ?>" method="post">
-            <div class="form-group">
-                <label for="id_kelas">ID Kelas</label>
-                <input type="text" id="id_kelas" name="id_kelas" placeholder="Masukkan ID Kelas" required>
-            </div>
 
             <div class="form-group">
                 <label for="nama_kelas">Nama Kelas</label>

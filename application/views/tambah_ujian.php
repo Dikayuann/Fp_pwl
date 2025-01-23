@@ -12,10 +12,7 @@
 	<div class="card shadow-lg p-4" style="max-width: 500px; width: 100%; border-radius: 15px; background-color: rgba(255, 255, 255, 0.9);">
 		<h2 class="text-center mb-4" style="color: #2b5c87;">Tambah Ujian</h2>
 		<form action="<?php echo site_url('crud_ujian/simpan'); ?>" method="post">
-			<div class="mb-3">
-				<label for="id_ujian" class="form-label">ID Ujian</label>
-				<input type="text" class="form-control" id="id_ujian" name="id_ujian" placeholder="Masukkan ID Ujian" >
-			</div>
+
 			<div class="mb-3">
 				<label for="id_mapel" class="form-label">ID Mapel</label>
 				<input type="text" class="form-control" id="id_mapel" name="id_mapel" placeholder="Masukkan ID Mapel" required>

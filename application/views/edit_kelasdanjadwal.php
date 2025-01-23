@@ -78,7 +78,7 @@
 <body>
     <div class="form-container">
         <h1>Edit Kelas dan Jadwal</h1>
-        <form action="<?= site_url('kelas/update') ?>" method="post">
+        <form action="<?= site_url('crud_kelas_jadwal/update') ?>" method="post">
             <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas; ?>">
             <div class="form-group">
                 <label for="nama_kelas">Nama Kelas</label>

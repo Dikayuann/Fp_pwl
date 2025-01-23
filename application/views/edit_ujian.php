@@ -13,10 +13,7 @@
 		<!-- Heading with custom color -->
 		<h2 class="text-center mb-4" style="color: #2b5c87;">Edit Ujian</h2>
 		<form action="<?php echo site_url('crud_ujian/simpan'); ?>" method="post">
-			<div class="mb-3">
-				<label for="id_ujian" class="form-label">ID Ujian</label>
-				<input type="text" class="form-control" id="id_ujian" name="id_ujian" value="<?php echo $ujian->id_ujian; ?>" placeholder="Masukkan ID Ujian" required>
-			</div>
+
 			<div class="mb-3">
 				<label for="id_mapel" class="form-label">ID Mapel</label>
 				<input type="text" class="form-control" id="id_mapel" name="id_mapel" value="<?php echo $ujian->id_mapel; ?>" placeholder="Masukkan ID Mapel" required>
