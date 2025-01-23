@@ -139,10 +139,6 @@
             <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group">
-            <label for="tanggal_registrasi">Tanggal Registrasi:</label>
-            <input type="date" id="tanggal_registrasi" name="tanggal_registrasi" required>
-        </div>
-        <div class="form-group">
             <label for="foto_profil">Foto Profil:</label>
             <input type="file" id="foto_profil" name="foto_profil" required>
         </div>
