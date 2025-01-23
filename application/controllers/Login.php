@@ -27,11 +27,12 @@ class Login extends CI_Controller {
 		// Memeriksa apakah email dan password valid
 		$user = $this->Login_model->auth_murid($email, $password);
 
-		if ($user = true) {
+		if ($user == true) {
 			// Jika login berhasil, simpan session dan arahkan ke dashboard
 			$this->session->set_userdata('id_murid', $user->id_murid);
 			$this->session->set_userdata('nama_murid', $user->nama_murid);
 			$this->session->set_userdata('email_murid', $user->email_murid);
+			$this->session->set_userdata('foto_murid', $user->foto_murid);
 			redirect('dashboard');  // Arahkan ke halaman dashboard
 		} else {
 			// Jika login gagal, tampilkan pesan error

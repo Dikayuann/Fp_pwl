@@ -151,45 +151,30 @@
 
 <body>
     <div class="container">
-        <div class="sidebar">
+    <div class="sidebar">
             <div class="profile">
-                <img src="profile.jpg" alt="Profile Picture">
-                <div>
-                    <button class="profile-btn">Profil</button>
-                </div>
+                <img src="/Fp_pwl/uploads/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
+                <p><?php echo $this->session->userdata('nama_murid'); ?></p>
+                <a href="<?php echo site_url('login/logout'); ?>" class="profile-btn mt-5">Logout</a>
             </div>
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Jadwal Pelajaran</a></li>
-                <li><a href="#">Pendaftaran Matapelajaran</a></li>
-                <li><a href="#">Ujian</a></li>
-                <li><a href="#">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="#">Pembayaran</a></li>
+                <li><a href="../dashboard">Dashboard</a></li>
+                <li><a href="../jadwal">Jadwal Pelajaran</a></li>
+                <li><a href="../pendaftaran">Pendaftaran Matapelajaran</a></li>
+                <li><a href="../ujian">Ujian</a></li>
+                <li><a href="../nilai">Nilai Hasil Pembelajaran</a></li>
+                <li><a href="../pembayaran">Pembayaran</a></li>
             </ul>
         </div>
         <div class="content">
             <h1>Materi</h1>
-            <div class="material-section">
-                <h2>Bahasa Indonesia - Deskripsi</h2>
-                <p><strong>Apa itu 5W1H?</strong><br>5W1H adalah metode analisis yang digunakan untuk memahami suatu
-                    situasi, memecahkan masalah, atau menyusun perencanaan. Konsep ini berasal dari pertanyaan dalam
-                    bahasa Inggris:</p>
-                <ul>
-                    <li>What (Apa)</li>
-                    <li>Who (Siapa)</li>
-                    <li>Where (Di mana)</li>
-                    <li>When (Kapan)</li>
-                    <li>Why (Mengapa)</li>
-                    <li>How (Bagaimana)</li>
-                </ul>
-                <p><strong>Langkah-Langkah:</strong></p>
-                <ol>
-                    <li>Penyusunan Masalah: Membuat masalah secara mendalam.</li>
-                    <li>Pembuatan Rencana: Membuat langkah-langkah untuk menyelesaikan masalah.</li>
-                    <li>Pengembangan Cerita: Membuat laporan singkat.</li>
-                </ol>
-                <a href="#">Link Video</a>
-            </div>
+            <?php foreach ($materi as $m): ?>
+                <div class="material-section">
+                    <h2><?php echo $m->nama_mapel; ?> - Deskripsi</h2>
+                    <p><?php echo $m->deskripsi; ?></p>
+                    <a href="<?php echo $m->link_video; ?>">Link Video</a>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

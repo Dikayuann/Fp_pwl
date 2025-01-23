@@ -36,4 +36,34 @@ class Kelas_model extends CI_Model {
         $this->db->where('id_kelas', $id_kelas);
         return $this->db->delete('kelas');
     }
+
+    public function get_kelas_by_id_murid($id_murid) {
+        // Menyusun query untuk mengambil nama kelas, jadwal, mata pelajaran, dan guru
+        $this->db->select('k.nama_kelas, k.jadwal, m.nama_mapel, a.nama_admin');
+        $this->db->from('kelas k');
+        $this->db->join('pengajaran p', 'p.id_kelas = k.id_kelas');
+        $this->db->join('matapelajaran m', 'm.id_mapel = p.id_mapel');
+        $this->db->join('administrasi a', 'a.id_admin = k.id_admin');
+        $this->db->where('k.id_murid', $id_murid);
+        
+        // Menjalankan query dan mengembalikan hasilnya
+        $query = $this->db->get();
+        return $query->result(); 
+    }
+
+    public function get_kelas_info() {
+        // Menyusun query untuk mengambil nama kelas, jadwal, mata pelajaran, dan admin
+        $this->db->select('k.nama_kelas, k.jadwal, m.nama_mapel, a.nama_admin');
+        $this->db->from('kelas k');
+        $this->db->join('pengajaran p', 'p.id_kelas = k.id_kelas');
+        $this->db->join('matapelajaran m', 'm.id_mapel = p.id_mapel');
+        $this->db->join('administrasi a', 'a.id_admin = k.id_admin');
+        
+        // Menjalankan query dan mengembalikan hasilnya
+        $query = $this->db->get();
+        return $query->result();  // Mengembalikan hasil sebagai array objek
+    }
+    
+    
+    
 }

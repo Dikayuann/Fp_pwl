@@ -10,6 +10,11 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function index() {
+		if (!$this->session->userdata('id_murid')) {
+			// Jika tidak ada session, redirect ke halaman login
+			redirect('login');
+		}
+
 		// Mengambil semua data mata pelajaran dari database
 		$data['matapelajaran'] = $this->Mapel_model->get_all();
 

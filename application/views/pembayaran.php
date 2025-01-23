@@ -61,6 +61,7 @@
             cursor: pointer;
             border-radius: 30px;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         .profile-btn:hover {
@@ -146,10 +147,11 @@
 <body>
     <div class="header">Bimbelindo</div>
     <div class="container">
-        <div class="sidebar">
+    <div class="sidebar">
             <div class="profile">
-                <img src="/Fp_pwl/uploads/janu.jpg" alt="Profile Picture">
-                <button class="profile-btn" onclick="window.location.href='<?php echo site_url('login/logout'); ?>';">Logout</button>
+                <img src="/Fp_pwl/uploads/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
+                <p><?php echo $this->session->userdata('nama_murid'); ?></p>
+                <a href="<?php echo site_url('login/logout'); ?>" class="profile-btn mt-5">Logout</a>
             </div>
             <ul class="menu">
                 <li><a href="dashboard">Dashboard</a></li>

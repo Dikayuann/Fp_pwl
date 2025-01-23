@@ -115,3 +115,6 @@ $route['CRUD_nilai/simpan'] = 'CRUD_nilai/simpan';  // Menyimpan nilai baru
 $route['CRUD_nilai/edit/(:num)'] = 'CRUD_nilai/edit/$1';  // Menampilkan form edit nilai berdasarkan ID
 $route['CRUD_nilai/update'] = 'CRUD_nilai/update';  // Mengupdate data nilai
 $route['CRUD_nilai/hapus/(:num)'] = 'CRUD_nilai/hapus/$1';  // Menghapus nilai berdasarkan ID
+
+
+$route['materi/(:num)'] = 'materi/index/$1';  // Routing untuk materi berdasarkan ID

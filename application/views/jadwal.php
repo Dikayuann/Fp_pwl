@@ -61,6 +61,7 @@
             cursor: pointer;
             border-radius: 30px;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         .profile-btn:hover {
@@ -146,20 +147,21 @@
 <body>
     <div class="header">Bimbelindo</div>
     <div class="container">
-        <div class="sidebar">
-            <div class="profile">
-                <img src="/Fp_pwl/uploads/janu.jpg" alt="Profile Picture">
-                <button class="profile-btn" onclick="window.location.href='<?php echo site_url('login/logout'); ?>';">Logout</button>
-            </div>
-            <ul class="menu">
-                <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="jadwal">Jadwal Pelajaran</a></li>
-                <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
-                <li><a href="ujian">Ujian</a></li>
-                <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="pembayaran">Pembayaran</a></li>
-            </ul>
+    <div class="sidebar">
+        <div class="profile">
+            <img src="/Fp_pwl/uploads/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
+            <p><?php echo $this->session->userdata('nama_murid'); ?></p>
+            <a href="<?php echo site_url('login/logout'); ?>" class="profile-btn mt-5">Logout</a>
         </div>
+        <ul class="menu">
+            <li><a href="dashboard">Dashboard</a></li>
+            <li><a href="jadwal">Jadwal Pelajaran</a></li>
+            <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+            <li><a href="ujian">Ujian</a></li>
+            <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
+            <li><a href="pembayaran">Pembayaran</a></li>
+        </ul>
+    </div>
         <div class="content">
             <h1>Jadwal Pelajaran</h1>
             <table>
@@ -173,24 +175,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Contoh Database -->
-                    <tr>
-                        <td>1</td>
-                        <td>Senin</td>
-                        <td>Matematika</td>
-                        <td>11</td>
-                        <td>Agus</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Selasa</td>
-                        <td>Geografi</td>
-                        <td>11</td>
-                        <td>Fasiyanto</td>
-                    </tr>
+                    <?php $no = 1; ?>
+                    <?php foreach ($kelas as $jd): ?>
+                        <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $jd->jadwal; ?></td>
+                            <td><?php echo $jd->nama_mapel; ?></td>
+                            <td><?php echo $jd->nama_kelas; ?></td>
+                            <td><?php echo $jd->nama_admin; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
+
     </div>
     <footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
 </body>

@@ -17,7 +17,7 @@ class Login_model extends CI_Model {
 		$password = $this->db->escape_str($password);
 
 		// Mengecek kecocokan email dan password di database
-		$this->db->select('id_murid, nama_murid, email_murid, password_murid');
+		$this->db->select('id_murid, nama_murid, email_murid, foto_murid, password_murid');
 		$this->db->from('murid');
 		$this->db->where('email_murid', $email);
 		$this->db->where('password_murid', $password);

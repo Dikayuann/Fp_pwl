@@ -33,6 +33,15 @@ class Mapel_model extends CI_Model {
 		$this->db->where('id_mapel', $id_mapel);
 		return $this->db->delete($this->table);
 	}
+
+	public function get_materi_by_mapel($id_mapel) {
+        // Ambil data materi berdasarkan id_mapel
+        $this->db->select('*');
+        $this->db->from('matapelajaran');
+        $this->db->where('id_mapel', $id_mapel);
+        $query = $this->db->get();
+        return $query->result();  // Mengembalikan hasil sebagai array objek
+    }
 }
 ?>
 

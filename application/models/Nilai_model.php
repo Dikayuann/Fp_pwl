@@ -34,6 +34,23 @@ class Nilai_model extends CI_Model {
 		// Menghapus data nilai berdasarkan ID
 		return $this->db->delete('nilai', ['id_nilai' => $id]);
 	}
+
+	public function get_nilai($id_murid) {
+		// Menyusun query untuk mengambil data yang diperlukan
+		$this->db->select('k.jadwal, m.nama_mapel, k.nama_kelas, a.nama_admin, n.nilai_angka');
+		$this->db->from('pendaftarankelas pk');
+		$this->db->join('kelas k', 'pk.id_kelas = k.id_kelas');
+		$this->db->join('pengajaran p', 'k.id_kelas = p.id_kelas');
+		$this->db->join('matapelajaran m', 'p.id_mapel = m.id_mapel');
+		$this->db->join('administrasi a', 'k.id_admin = a.id_admin');
+		$this->db->join('nilai n', 'pk.id_murid = n.id_murid AND m.id_mapel = n.id_mapel');
+		$this->db->where('pk.id_murid', $id_murid);  
+	
+		// Menjalankan query dan mengembalikan hasilnya
+		$query = $this->db->get();
+		return $query->result();  // Mengembalikan hasil sebagai array objek
+	}
+
 }
 ?>
 

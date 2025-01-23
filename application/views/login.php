@@ -103,12 +103,12 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="/Fp_pwl/uploads/bimbelindo.png" alt="Logo Bimbelindo">
+        <img src="/Fp_pwl/uploads/" alt="Logo Bimbelindo">
         <h1>Bimbelindo</h1>
         <p>Solusi Pembelajaran Jarak Jauh</p>
         <p>Gunakan ID pembelajaran Anda</p>
         <form action="<?php echo site_url('Login/authenticate'); ?>" method="post">
-            <input type="text" name="Email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>

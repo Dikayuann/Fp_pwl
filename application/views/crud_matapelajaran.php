@@ -118,6 +118,7 @@
                         <th>Nama Mapel</th>
                         <th>ID Kelas</th>
                         <th>ID Pengajaran</th>
+                        <th>Link Video</th>
                         <th>Deskripsi</th>
                         <th>Aksi</th>
                     </tr>
@@ -129,6 +130,7 @@
                             <td><?php echo $mapel->nama_mapel; ?></td>
                             <td><?php echo $mapel->id_kelas; ?></td>
                             <td><?php echo $mapel->id_pengajaran; ?></td>
+                            <td><?php echo $mapel->link_video; ?></td>
                             <td><?php echo $mapel->deskripsi; ?></td>
                             <td>
                                 <a href="<?php echo site_url('crud_matapelajaran/edit/'.$mapel->id_mapel); ?>" class="btn btn-warning btn-sm">Edit</a>
