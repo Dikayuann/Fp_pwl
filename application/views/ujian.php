@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Pelajaran</title>
+    <title>Ujian</title>
     <style>
         * {
             margin: 0;
@@ -51,7 +51,12 @@
             border-radius: 50%;
             margin-bottom: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
+
+        .profile p {
+			margin-bottom: 30px;
+		}
 
         .profile-btn {
             background-color: #325279;
@@ -191,7 +196,7 @@
             </table>
         </div>
     </div>
-    <footer>&copy; 2024 Bimbelindo. All rights reserved.</footer>
+    <footer>&copy; 2025 Bimbelindo. All rights reserved.</footer>
 </body>
 
 </html>
