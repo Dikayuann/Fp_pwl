@@ -5,7 +5,7 @@ class Materi extends CI_Controller {
     public function __construct() {
         parent::__construct();
         // Memuat model yang diperlukan
-        $this->load->model('Mapel_model');
+        $this->load->model('Matapelajaran_model');
     }
 
     // Fungsi untuk menampilkan materi berdasarkan ID mapel
@@ -16,7 +16,7 @@ class Materi extends CI_Controller {
 		}
 
         // Mengambil data materi berdasarkan ID mapel
-        $data['materi'] = $this->Mapel_model->get_materi_by_mapel($id_mapel);
+        $data['materi'] = $this->Matapelajaran_model->get_materi_by_mapel($id_mapel);
         
         // Menampilkan halaman materi dengan data materi
         $this->load->view('materi', $data);
