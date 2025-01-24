@@ -63,4 +63,12 @@ class Matapelajaran_model extends CI_Model {
         $this->db->where('id_mapel', $id_mapel); // Menentukan ID mata pelajaran yang akan dihapus
         $this->db->delete('matapelajaran'); // Menghapus data
     }
+
+    public function get_materi_by_mapel($id_mapel) {
+        $this->db->select('*');
+        $this->db->from('matapelajaran');
+        $this->db->where('id_mapel', $id_mapel);
+        $query = $this->db->get();
+        return $query->result(); // Mengembalikan hasil sebagai array objek
+    }
 }

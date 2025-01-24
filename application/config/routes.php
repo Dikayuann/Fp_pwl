@@ -117,4 +117,4 @@ $route['crud_murid/hapus/(:num)'] = 'crud_murid/hapus/$1';
 // $route['CRUD_nilai/hapus/(:num)'] = 'CRUD_nilai/hapus/$1';  // Menghapus nilai berdasarkan ID
 
 
-// $route['materi/(:num)'] = 'materi/index/$1';  // Routing untuk materi berdasarkan ID
+$route['materi/(:num)'] = 'materi/index/$1';  // Routing untuk materi berdasarkan ID
