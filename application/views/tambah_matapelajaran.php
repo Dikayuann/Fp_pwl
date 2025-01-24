@@ -95,14 +95,6 @@
 			<input type="text" id="nama_mapel" name="nama_mapel" placeholder="Masukkan Nama Mapel" required>
 		</div>
 		<div class="form-group">
-			<label for="id_kelas">ID Kelas</label>
-			<input type="text" id="id_kelas" name="id_kelas" placeholder="Masukkan ID Kelas" required>
-		</div>
-		<div class="form-group">
-			<label for="id_pengajaran">ID Pengajaran</label>
-			<input type="text" id="id_pengajaran" name="id_pengajaran" placeholder="Masukkan ID Pengajaran" required>
-		</div>
-		<div class="form-group">
 			<label for="deskripsi">Link Video</label>
 			<input type="text" id="link_video" name="link" placeholder="Masukkan Link Video" required>
 		</div>

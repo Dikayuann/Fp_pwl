@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +14,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #e8f0fa; /* Sama dengan form Tambah Murid */
+            background-color: #e8f0fa;
         }
 
         .form-container {
-            background-color: rgba(255, 255, 255, 0.9); /* Konsisten dengan Tambah Murid */
-            border-radius: 15px; /* Konsisten dengan Tambah Murid */
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
             padding: 40px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
@@ -27,7 +28,7 @@
         }
 
         .form-container h1 {
-            color: #2b5c87; /* Sama dengan warna heading Tambah Murid */
+            color: #2b5c87;
             font-size: 24px;
             margin-bottom: 30px;
         }
@@ -38,30 +39,32 @@
         }
 
         .form-group label {
-            color: #2b5c87; /* Sama dengan label Tambah Murid */
+            color: #2b5c87;
             font-size: 14px;
             margin-bottom: 5px;
             display: block;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
-            background-color: #f3f7fb; /* Sama dengan input Tambah Murid */
+            background-color: #f3f7fb;
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
-            border: 2px solid #4a7db1; /* Sama dengan efek fokus Tambah Murid */
+            border: 2px solid #4a7db1;
         }
 
         .btn-submit {
             width: 100%;
             padding: 10px;
-            background-color: #2b5c87; /* Sama dengan tombol Tambah Murid */
+            background-color: #2b5c87;
             border: none;
             border-radius: 5px;
             color: white;
@@ -71,37 +74,53 @@
         }
 
         .btn-submit:hover {
-            background-color: #4a7db1; /* Sama dengan hover tombol Tambah Murid */
+            background-color: #4a7db1;
         }
     </style>
 </head>
+
 <body>
     <div class="form-container">
         <h1>Tambah Kelas dan Jadwal</h1>
         <form action="<?= site_url('crud_kelas_jadwal/simpan') ?>" method="post">
 
+            <!-- Nama Kelas -->
             <div class="form-group">
                 <label for="nama_kelas">Nama Kelas</label>
                 <input type="text" id="nama_kelas" name="nama_kelas" placeholder="Masukkan Nama Kelas" required>
             </div>
 
+            <!-- Pilih Admin -->
             <div class="form-group">
-                <label for="id_murid">ID Murid</label>
-                <input type="text" id="id_murid" name="id_murid" placeholder="Masukkan ID Murid" required>
+                <label for="id_admin">Pilih Admin</label>
+                <select id="id_admin" name="id_admin" required>
+                    <option value="">Pilih Admin</option>
+                    <?php foreach ($admins as $admin): ?>
+                        <option value="<?= $admin->id_admin ?>"><?= $admin->nama_admin ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
 
-            <div class="form-group">
-                <label for="id_admin">ID Admin</label>
-                <input type="text" id="id_admin" name="id_admin" placeholder="Masukkan ID Admin" required>
-            </div>
-
+            <!-- Jadwal -->
             <div class="form-group">
                 <label for="jadwal">Jadwal</label>
                 <input type="text" id="jadwal" name="jadwal" placeholder="Masukkan Jadwal" required>
+            </div>
+
+            <!-- Pilih Mata Pelajaran -->
+            <div class="form-group">
+                <label for="id_mapel">Pilih Mata Pelajaran</label>
+                <select id="id_mapel" name="id_mapel" required>
+                    <option value="">Pilih Mata Pelajaran</option>
+                    <?php foreach ($mata_pelajaran as $mapel): ?>
+                        <option value="<?= $mapel->id_mapel ?>"><?= $mapel->nama_mapel ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
 
             <button type="submit" class="btn-submit">Tambahkan</button>
         </form>
     </div>
 </body>
+
 </html>

@@ -1,22 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class nilai extends CI_Controller {
-	public function __construct() {
+class Nilai extends CI_Controller {
+
+    public function __construct()
+    {
         parent::__construct();
-        // Memuat model
+        // Memastikan murid sudah login
+        if (!$this->session->userdata('id_murid')) {
+            redirect('login');
+        }
         $this->load->model('Nilai_model');
     }
 
-    public function index() {
-		if (!$this->session->userdata('id_murid')) {
-			// Jika tidak ada session, redirect ke halaman login
-			redirect('login');
-		}
-        // Mengambil data jadwal dan ujian untuk murid tertentu
-        $data['nilai_ujian'] = $this->Nilai_model->get_nilai($this->session->userdata('id_murid'));
+    // Menampilkan halaman nilai ujian
+    public function index()
+    {
+        $id_murid = $this->session->userdata('id_murid');
 
-        // Menampilkan data ke view
+        // Mengambil nilai ujian yang sudah dikerjakan oleh murid
+        $data['nilai_ujian'] = $this->Nilai_model->getNilaiByMurid($id_murid);
+
+        // Menampilkan halaman nilai
         $this->load->view('nilai', $data);
     }
 }

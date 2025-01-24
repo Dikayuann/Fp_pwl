@@ -37,7 +37,7 @@ class Login_model extends CI_Model {
 		// Query the database to find the admin with the given username and password
 		$this->db->where('email_admin', $username);  // Match the email (or username)
 		$this->db->where('password_admin', $password);  // Match the password
-		$query = $this->db->get('administrasi');  // 'admin' is the table name
+		$query = $this->db->get('admin');  // 'admin' is the table name
 
 		// If a match is found, return the admin data, otherwise return false
 		if ($query->num_rows() == 1) {

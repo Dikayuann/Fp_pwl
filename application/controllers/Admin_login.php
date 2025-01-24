@@ -23,7 +23,7 @@ class Admin_login extends CI_Controller {
 	{
 		// Set form validation rules for username and password
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[20]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[20]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
 
 		// Check if form validation passes
 		if ($this->form_validation->run() == FALSE) {
