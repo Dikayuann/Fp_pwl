@@ -5,66 +5,81 @@ class Crud_nilai extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		// Memuat model Nilai_model
 		$this->load->model('Nilai_model');
+		$this->load->model('Murid_model');
+		$this->load->model('Matapelajaran_model');
 	}
 
 	// Fungsi untuk menampilkan data nilai
 	public function index() {
-		// Mengambil semua data nilai dari model
-		$data['nilai'] = $this->Nilai_model->get_all_nilai();
-		// Menampilkan halaman kelola nilai dengan data nilai
-		$this->load->view('crud_nilai', $data);
-	}
+        $data['nilai'] = $this->Nilai_model->get_all_nilai(); 
+		$data['murid'] = $this->Murid_model->get_all_murid(); 
+        $data['mapel'] = $this->Matapelajaran_model->get_all_mapel();
+        $this->load->view('crud_nilai', $data);
+    }
 
-	// Fungsi untuk menambah data nilai
-	public function tambah() {
-		if ($this->input->post()) {
-			// Mendapatkan data input dari form
-			$data = array(
-				'id_murid' => $this->input->post('id_murid'),
-				'nama_murid' => $this->input->post('nama_murid'),
-				'id_mapel' => $this->input->post('id_mapel'),
-				'nilai_angka' => $this->input->post('nilai_angka')
-			);
-			// Menyimpan data nilai ke database
-			$this->Nilai_model->add_nilai($data);
-			// Redirect kembali ke halaman daftar nilai
-			redirect('crud_nilai');
-		} else {
-			// Jika tidak ada data yang dikirim, tampilkan form tambah nilai
-			$this->load->view('tambah_nilai');
-		}
-	}
+    public function tambah() {
+        // Ambil data murid dan mapel dari database
+        $data['murid'] = $this->Murid_model->get_all_murid(); // Ambil semua murid
+        $data['mapel'] = $this->Matapelajaran_model->get_all_mapel(); // Ambil semua mata pelajaran
+    
+        if ($this->input->post()) {
+            // Menyimpan data nilai yang ditambahkan
+            $data_insert = [
+                'id_murid' => $this->input->post('id_murid'),
+                'id_mapel' => $this->input->post('id_mapel'),
+                'nilai_angka' => $this->input->post('nilai_angka')
+            ];
+    
+            // Simpan nilai ke database
+            $this->Nilai_model->tambah_nilai($data_insert);
+            redirect('crud_nilai'); // Redirect setelah menambah
+        } else {
+            // Tampilkan form tambah nilai dengan data murid dan mapel
+            $this->load->view('tambah_nilai', $data);
+        }
+    }
 
-	// Fungsi untuk mengedit data nilai
-	public function edit($id) {
-		// Mengambil data nilai berdasarkan ID
-		$data['nilai'] = $this->Nilai_model->get_nilai_by_id($id);
+	 // Function to edit the nilai
+	 public function edit($id_nilai) {
+        // Fetch the nilai data by id
+        $data['nilai'] = $this->Nilai_model->get_nilai_by_id($id_nilai);
+        
+        // Fetch all murid and mapel data
+        $data['murid'] = $this->Murid_model->get_all_murid();
+        $data['mapel'] = $this->Matapelajaran_model->get_all_mapel();
 
-		if ($this->input->post()) {
-			// Mendapatkan data input dari form untuk update
-			$data_update = array(
-				'id_murid' => $this->input->post('id_murid'),
-				'nama_murid' => $this->input->post('nama_murid'),
-				'id_mapel' => $this->input->post('id_mapel'),
-				'nilai_angka' => $this->input->post('nilai_angka')
-			);
-			// Update data nilai berdasarkan ID
-			$this->Nilai_model->update_nilai($id, $data_update);
-			// Redirect ke halaman daftar nilai setelah update
-			redirect('crud_nilai');
-		} else {
-			// Jika tidak ada data yang dikirim, tampilkan form edit dengan data nilai yang ada
-			$this->load->view('edit_nilai', $data);
-		}
-	}
+        // Load the edit view and pass the data
+        $this->load->view('edit_nilai', $data);
+    }
 
-	// Fungsi untuk menghapus data nilai
-	public function hapus($id) {
-		// Menghapus data nilai berdasarkan ID
+    // Function to save the edited nilai
+    public function simpan() {
+        $id_nilai = $this->input->post('id_nilai');
+        $id_murid = $this->input->post('id_murid');
+        $id_mapel = $this->input->post('id_mapel');
+        $nilai_angka = $this->input->post('nilai_angka');
+
+        // Prepare the data to be updated
+        $data = array(
+            'id_murid' => $id_murid,
+            'id_mapel' => $id_mapel,
+            'nilai_angka' => $nilai_angka
+        );
+
+        // Update the nilai record
+        $this->Nilai_model->update_nilai($id_nilai, $data);
+
+        // Redirect or load a success message
+        redirect('crud_nilai');
+    }
+	
+
+	public function hapus($id)
+	{
+		// Delete the exam by ID
 		$this->Nilai_model->delete_nilai($id);
-		// Redirect kembali ke halaman daftar nilai
+		// Redirect to the CRUD index page after deletion
 		redirect('crud_nilai');
 	}
 }

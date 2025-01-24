@@ -115,7 +115,7 @@
                 <thead>
                     <tr>
                         <th>ID Ujian</th>
-                        <th>ID Mapel</th>
+                        <th>Nama Mapel</th>
                         <th>ID Pengajaran</th>
                         <th>Link Ujian</th>
                         <th>Deskripsi</th>
@@ -126,7 +126,7 @@
                     <?php foreach ($ujian as $u): ?>
                         <tr>
                             <td><?php echo $u->id_ujian; ?></td>
-                            <td><?php echo $u->id_mapel; ?></td>
+                            <td><?php echo $u->nama_mapel; ?></td>
                             <td><?php echo $u->id_pengajaran; ?></td>
                             <td><a href="<?php echo $u->link_ujian; ?>" target="_blank"><?php echo $u->link_ujian; ?></a></td>
                             <td><?php echo $u->deskripsi; ?></td>

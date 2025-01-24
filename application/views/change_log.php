@@ -84,7 +84,7 @@
             background-color: #f1f1f1;
         }
 
-        h1  {
+        h1 {
             margin-bottom: 30px;
         }
     </style>
@@ -114,17 +114,19 @@
                     <tr>
                         <th>ID</th>
                         <th>Nama Tabel</th>
-                        <th>Tipe Perubahan</th>
-                        <th>Waktu Perubahan</th>
+                        <th>Operasi</th>
+                        <th>Deskripsi</th>
+                        <th>Tanggal Perubahan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($logs as $log): ?>
                         <tr>
-                            <td><?php echo $log->id; ?></td>
-                            <td><?php echo $log->table_name; ?></td>
-                            <td><?php echo $log->change_type; ?></td>
-                            <td><?php echo $log->changed_at; ?></td>
+                            <td><?php echo $log->id_log; ?></td>
+                            <td><?php echo $log->nama_tabel; ?></td>
+                            <td><?php echo $log->operasi; ?></td>
+                            <td><?php echo $log->deskripsi; ?></td>
+                            <td><?php echo $log->tanggal; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

@@ -7,63 +7,57 @@ class Kelas_model extends CI_Model {
         parent::__construct();
     }
 
-    // Mendapatkan semua kelas
+    // Mendapatkan kelas yang diikuti oleh murid
+    public function getKelasDiikuti($id_murid)
+    {
+        $this->db->select('kelas.id_kelas, kelas.nama_kelas, kelas.jadwal, admin.nama_admin');
+        $this->db->from('pendaftarankelas');
+        $this->db->join('kelas', 'pendaftarankelas.id_kelas = kelas.id_kelas');
+        $this->db->join('admin', 'kelas.id_admin = admin.id_admin');
+        $this->db->where('pendaftarankelas.id_murid', $id_murid);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+
+    // Mengambil semua data kelas
     public function get_all_kelas() {
         $query = $this->db->get('kelas');
         return $query->result();
     }
 
-    // Menambahkan kelas baru
-    public function insert_kelas($data) {
-        return $this->db->insert('kelas', $data);
-    }
-
-    // Mendapatkan kelas berdasarkan ID
+    // Mengambil data kelas berdasarkan ID
     public function get_kelas_by_id($id_kelas) {
         $this->db->where('id_kelas', $id_kelas);
         $query = $this->db->get('kelas');
         return $query->row();
     }
 
-    // Mengupdate kelas
-    public function update_kelas($id_kelas, $data) {
+    // Menambah kelas baru
+    public function tambah_kelas($nama_kelas, $id_admin, $jadwal) {
+        $data = [
+            'nama_kelas' => $nama_kelas,
+            'id_admin' => $id_admin,
+            'jadwal' => $jadwal
+        ];
+        $this->db->insert('kelas', $data);
+    }
+
+    // Memperbarui data kelas
+    public function update_kelas($id_kelas, $nama_kelas, $id_admin, $jadwal) {
+        $data = array(
+            'nama_kelas' => $nama_kelas,
+            'id_admin' => $id_admin,
+            'jadwal' => $jadwal
+        );
+
         $this->db->where('id_kelas', $id_kelas);
-        return $this->db->update('kelas', $data);
+        $this->db->update('kelas', $data);
     }
 
     // Menghapus kelas
-    public function delete_kelas($id_kelas) {
+    public function hapus_kelas($id_kelas) {
         $this->db->where('id_kelas', $id_kelas);
-        return $this->db->delete('kelas');
+        $this->db->delete('kelas');
     }
-
-    public function get_kelas_by_id_murid($id_murid) {
-        // Menyusun query untuk mengambil nama kelas, jadwal, mata pelajaran, dan guru
-        $this->db->select('k.nama_kelas, k.jadwal, m.nama_mapel, a.nama_admin');
-        $this->db->from('kelas k');
-        $this->db->join('pengajaran p', 'p.id_kelas = k.id_kelas');
-        $this->db->join('matapelajaran m', 'm.id_mapel = p.id_mapel');
-        $this->db->join('administrasi a', 'a.id_admin = k.id_admin');
-        $this->db->where('k.id_murid', $id_murid);
-        
-        // Menjalankan query dan mengembalikan hasilnya
-        $query = $this->db->get();
-        return $query->result(); 
-    }
-
-    public function get_kelas_info() {
-        // Menyusun query untuk mengambil nama kelas, jadwal, mata pelajaran, dan admin
-        $this->db->select('k.nama_kelas, k.jadwal, m.nama_mapel, a.nama_admin');
-        $this->db->from('kelas k');
-        $this->db->join('pengajaran p', 'p.id_kelas = k.id_kelas');
-        $this->db->join('matapelajaran m', 'm.id_mapel = p.id_mapel');
-        $this->db->join('administrasi a', 'a.id_admin = k.id_admin');
-        
-        // Menjalankan query dan mengembalikan hasilnya
-        $query = $this->db->get();
-        return $query->result();  // Mengembalikan hasil sebagai array objek
-    }
-    
-    
-    
 }

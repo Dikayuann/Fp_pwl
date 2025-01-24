@@ -63,16 +63,6 @@
 			</div>
 
 			<div class="form-group">
-				<label for="id_kelas">ID Kelas</label>
-				<input type="text" id="id_kelas" name="id_kelas" class="form-control" placeholder="Masukkan ID Kelas" value="<?php echo $mapel->id_kelas; ?>" required>
-			</div>
-
-			<div class="form-group">
-				<label for="id_pengajaran">ID Pengajaran</label>
-				<input type="text" id="id_pengajaran" name="id_pengajaran" class="form-control" placeholder="Masukkan ID Pengajaran" value="<?php echo $mapel->id_pengajaran; ?>" required>
-			</div>
-
-			<div class="form-group">
 				<label for="link_video">Link Video</label>
 				<input type="text" id="link_video" name="link" class="form-control" placeholder="Masukkan Link Video" value="<?php echo $mapel->link_video; ?>" required>
 			</div>

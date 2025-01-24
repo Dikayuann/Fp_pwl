@@ -111,7 +111,7 @@
 
 		<div class="form-group">
 			<label>Password:</label>
-			<input type="password" name="password" required>
+			<input type="password" name="password" value="<?php echo $murid->password_murid; ?>" required>
 		</div>
 
 		<div class="form-group">

@@ -37,7 +37,7 @@
             cursor: pointer;
             border-radius: 30px;
             transition: background-color 0.3s;
-			margin-bottom: 20px;
+            margin-bottom: 20px;
         }
 
         .sidebar .logout-btn:hover {
@@ -51,6 +51,7 @@
             padding: 10px;
             margin-bottom: 5px;
             transition: background-color 0.3s;
+            border-radius: 5px;
         }
 
         .sidebar .menu a:hover {
@@ -62,9 +63,9 @@
             flex-grow: 1;
         }
 
-		.content a {
-			margin-top: 10px;
-		}
+        .content a {
+            margin-top: 10px;
+        }
 
         table {
             background-color: #D9D9D9;
@@ -93,6 +94,23 @@
             height: 50px;
             border-radius: 50%;
         }
+
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+                padding: 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -117,6 +135,7 @@
             <h1>Kelola Murid</h1>
             <a href="<?php echo site_url('crud_murid/tambah'); ?>" class="btn btn-primary mb-3">Tambah Murid</a>
 
+            <!-- Tabel Murid -->
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>

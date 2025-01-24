@@ -1,22 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ujian extends CI_Controller {
-	public function __construct() {
+class Ujian extends CI_Controller {
+
+    public function __construct()
+    {
         parent::__construct();
-        // Memuat model
+        // Memastikan murid sudah login, jika tidak redirect ke login
+        if (!$this->session->userdata('id_murid')) {
+            redirect('login');
+        }
         $this->load->model('Ujian_model');
     }
 
-    public function index() {
-		if (!$this->session->userdata('id_murid')) {
-			// Jika tidak ada session, redirect ke halaman login
-			redirect('login');
-		}
-        // Mengambil data jadwal dan ujian untuk murid tertentu
-        $data['jadwal_ujian'] = $this->Ujian_model->get_jadwal_ujian($this->session->userdata('id_murid'));
-
-        // Menampilkan data ke view
+    // Menampilkan daftar ujian yang tersedia berdasarkan kelas yang diikuti
+    public function index()
+    {
+        $id_murid = $this->session->userdata('id_murid');
+        $data['ujian'] = $this->Ujian_model->getAvailableUjian($id_murid);
         $this->load->view('ujian', $data);
     }
+
+    // Menampilkan halaman ujian
+    
 }

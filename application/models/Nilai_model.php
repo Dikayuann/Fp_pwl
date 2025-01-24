@@ -1,56 +1,65 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Nilai_model extends CI_Model {
 
-	public function __construct() {
-		parent::__construct();
-	}
+    public function __construct() {
+        parent::__construct();
+    }
 
-	// Fungsi untuk mengambil semua data nilai
-	public function get_all_nilai() {
-		// Mengambil semua data dari tabel 'nilai' dan mengembalikannya dalam bentuk array
-		return $this->db->get('nilai')->result();
-	}
+    // Mengambil nilai ujian yang sudah dikerjakan oleh murid
+    public function getNilaiByMurid($id_murid)
+    {
+        $this->db->select('nilai.id_nilai, matapelajaran.nama_mapel, nilai.nilai_angka');
+        $this->db->from('nilai');
+        $this->db->join('matapelajaran', 'nilai.id_mapel = matapelajaran.id_mapel');
+        $this->db->where('nilai.id_murid', $id_murid);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
-	// Fungsi untuk mengambil data nilai berdasarkan ID
-	public function get_nilai_by_id($id) {
-		// Mengambil data dari tabel 'nilai' berdasarkan ID nilai yang diberikan
-		return $this->db->get_where('nilai', ['id_nilai' => $id])->row();
-	}
 
-	// Fungsi untuk menambahkan data nilai
-	public function add_nilai($data) {
-		// Menambahkan data baru ke tabel 'nilai'
-		return $this->db->insert('nilai', $data);
-	}
+	// Mengambil seluruh data nilai
+    public function get_all_nilai() {
+        $this->db->select('nilai.id_nilai, nilai.id_murid, murid.nama_murid, nilai.id_mapel, nilai.nilai_angka');
+        $this->db->from('nilai');
+        $this->db->join('murid', 'murid.id_murid = nilai.id_murid'); // Menggabungkan dengan tabel murid untuk mendapatkan nama murid
+        $this->db->join('matapelajaran', 'matapelajaran.id_mapel = nilai.id_mapel'); // Menambahkan mapel jika dibutuhkan
+        $query = $this->db->get();
+        return $query->result(); // Mengembalikan hasil sebagai array objek
+    }
 
-	// Fungsi untuk memperbarui data nilai
-	public function update_nilai($id, $data) {
-		// Memperbarui data nilai berdasarkan ID nilai
-		return $this->db->update('nilai', $data, ['id_nilai' => $id]);
-	}
+    // Menambahkan nilai baru
+    public function tambah_nilai($data) {
+        return $this->db->insert('nilai', $data); // Menyimpan data ke dalam tabel nilai
+    }
 
-	// Fungsi untuk menghapus data nilai
-	public function delete_nilai($id) {
-		// Menghapus data nilai berdasarkan ID
-		return $this->db->delete('nilai', ['id_nilai' => $id]);
-	}
+    // Mengambil data nilai berdasarkan ID
+    public function get_nilai_by_id($id_nilai) {
+        $this->db->where('id_nilai', $id_nilai);
+        $query = $this->db->get('nilai');
+        return $query->row(); // Mengembalikan satu row (objek)
+    }
 
-	public function get_nilai($id_murid) {
-		// Menyusun query untuk mengambil data yang diperlukan
-		$this->db->select('k.jadwal, m.nama_mapel, k.nama_kelas, a.nama_admin, n.nilai_angka');
-		$this->db->from('pendaftarankelas pk');
-		$this->db->join('kelas k', 'pk.id_kelas = k.id_kelas');
-		$this->db->join('pengajaran p', 'k.id_kelas = p.id_kelas');
-		$this->db->join('matapelajaran m', 'p.id_mapel = m.id_mapel');
-		$this->db->join('administrasi a', 'k.id_admin = a.id_admin');
-		$this->db->join('nilai n', 'pk.id_murid = n.id_murid AND m.id_mapel = n.id_mapel');
-		$this->db->where('pk.id_murid', $id_murid);  
-	
-		// Menjalankan query dan mengembalikan hasilnya
+    // Mengupdate nilai
+    public function update_nilai($id_nilai, $data_update) {
+        $this->db->where('id_nilai', $id_nilai);
+        return $this->db->update('nilai', $data_update); // Melakukan update data nilai
+    }
+
+    // Menghapus nilai
+    public function delete_nilai($id_nilai) {
+        $this->db->where('id_nilai', $id_nilai);
+        return $this->db->delete('nilai'); // Menghapus data berdasarkan ID
+    }
+
+	public function get_mapel_by_murid($id_murid) {
+		$this->db->select('matapelajaran.id_mapel, matapelajaran.nama_mapel');
+		$this->db->from('matapelajaran');
+		$this->db->join('nilai', 'nilai.id_mapel = matapelajaran.id_mapel');
+		$this->db->where('nilai.id_murid', $id_murid);
 		$query = $this->db->get();
-		return $query->result();  // Mengembalikan hasil sebagai array objek
+		return $query->result(); // Mengembalikan mata pelajaran yang tersedia untuk murid tersebut
 	}
-
+	
 }
-?>
-

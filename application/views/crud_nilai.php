@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,10 +61,6 @@
             flex-grow: 1;
         }
 
-		.content a {
-		margin-top: 10px;
-		}
-
         table {
             background-color: #D9D9D9;
             border-radius: 15px;
@@ -89,7 +84,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
@@ -145,5 +139,4 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -24,19 +24,31 @@
             text-align: left;
             font-size: 22px;
             font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         .container {
             display: flex;
             min-height: 100vh;
+            margin-top: 60px; /* Space for the fixed header */
         }
 
         .sidebar {
             width: 250px;
             background-color: #D9D9D9;
             color: #000000;
-            padding: 0px;
+            padding: 0;
             height: 100vh;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            z-index: 999;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .profile {
@@ -55,8 +67,12 @@
         }
 
         .profile p {
-			margin-bottom: 30px;
-		}
+            margin-bottom: 30px;
+        }
+
+        .profile a {
+            text-decoration: none;
+        }
 
         .profile-btn {
             background-color: #325279;
@@ -76,6 +92,7 @@
         .menu {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .menu li {
@@ -99,6 +116,7 @@
         .content {
             flex: 1;
             padding: 30px;
+            margin-left: 250px; /* Space for sidebar */
             background-color: #F8F9FA;
         }
 
@@ -112,48 +130,34 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: #D9D9D9;
+            margin-top: 20px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         table th,
         table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
         }
 
         table th {
             background-color: #325279;
-            color: #fff;
-            text-align: center;
+            color: #ffffff;
         }
 
-        table tbody tr:nth-child(even) {
+        table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        table tbody tr:hover {
+        table tr:hover {
             background-color: #f1f1f1;
         }
 
-        .btn-daftar {
-            padding: 5px 15px;
-            background-color: #325279;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-daftar:hover {
-            background-color: #3a6a98;
-        }
-
         footer {
+            margin-left: 250px;
             text-align: center;
             padding: 20px;
             background-color: #325279;
@@ -168,42 +172,36 @@
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="/Fp_pwl/uploads/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
+                <img src="/Fp_pwl/uploads/foto/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
                 <p><?php echo $this->session->userdata('nama_murid'); ?></p>
                 <a href="<?php echo site_url('login/logout'); ?>" class="profile-btn mt-5">Logout</a>
             </div>
             <ul class="menu">
                 <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="jadwal">Jadwal Pelajaran</a></li>
-                <li><a href="pendaftaran">Pendaftaran Matapelajaran</a></li>
+                <li><a href="kelas">Jadwal</a></li>
+                <li><a href="pendaftaran">Pendaftaran Kelas</a></li>
                 <li><a href="ujian">Ujian</a></li>
-                <li><a href="nilai">Nilai Hasil Pembelajaran</a></li>
-                <li><a href="pembayaran">Pembayaran</a></li>
+                <li><a href="nilai">Nilai</a></li>
             </ul>
         </div>
+
         <div class="content">
             <h1>Nilai Hasil Pembelajaran</h1>
             <table>
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Hari</th>
                         <th>Mata Pelajaran</th>
-                        <th>Kelas</th>
-                        <th>Guru/Pengajar</th>
                         <th>Nilai</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php $no = 1; ?>
-                    <?php foreach ($nilai_ujian as $u): ?>
+                    <?php $no = 1; ?>
+                    <?php foreach ($nilai_ujian as $nilai): ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><?php echo $u->jadwal; ?></td>
-                            <td><?php echo $u->nama_mapel; ?></td>
-                            <td><?php echo $u->nama_kelas; ?></td>
-                            <td><?php echo $u->nama_admin; ?></td>
-                            <td><?php echo $u->nilai_angka; ?></td>
+                            <td><?php echo $nilai->nama_mapel; ?></td>
+                            <td><?php echo number_format($nilai->nilai_angka, 2); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

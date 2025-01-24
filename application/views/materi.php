@@ -58,6 +58,10 @@
             margin-bottom: 30px;
         }
 
+        .profile a {
+			text-decoration: none;
+		}
+
         .profile-btn {
             background-color: #325279;
             color: #fff;
@@ -158,7 +162,7 @@
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="/Fp_pwl/uploads/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
+                <img src="/Fp_pwl/uploads/foto/<?php echo $this->session->userdata('foto_murid'); ?>" alt="Profile Picture">
                 <p><?php echo $this->session->userdata('nama_murid'); ?></p>
                 <a href="<?php echo site_url('login/logout'); ?>" class="profile-btn">Logout</a>
             </div>
@@ -168,7 +172,6 @@
             <li><a href="<?php echo site_url('pendaftaran'); ?>">Pendaftaran Matapelajaran</a></li>
             <li><a href="<?php echo site_url('ujian'); ?>">Ujian</a></li>
             <li><a href="<?php echo site_url('nilai'); ?>">Nilai Hasil Pembelajaran</a></li>
-            <li><a href="<?php echo site_url('pembayaran'); ?>">Pembayaran</a></li>
         </ul>
         </div>
         <div class="content">
